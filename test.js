@@ -1,8 +1,5 @@
-console.log('script arrived and executed');
+console.log('script arrived and executing');
 
-return {a: 'aaaa'};
-
-//TODO: assert jquery present
 function initDealzone(){
 	var $fn_container = 
 		"<div class='fn-dealzone-container' style='display:none;'>" + 
@@ -49,6 +46,8 @@ function keepHeight(){
 	});
 }
 
+
+// Get jQuery
 (function () {
 
     function loadScript(url, callback) {
@@ -68,17 +67,11 @@ function keepHeight(){
                 callback();
             };
         }
-
         script.src = url;
         document.getElementsByTagName("head")[0].appendChild(script);
     }
-
     loadScript("https://code.jquery.com/jquery-3.0.0.min.js", function () {
-
          //jQuery loaded
          console.log('jquery loaded');
-
     });
-
-
 })();
