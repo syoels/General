@@ -61,6 +61,13 @@ function keepWidth(){
 		var w = $(window).width();
 		var body_max_width = (w - min_width) + "px";
 		$('body').css({'max-width': body_max_width});
+		
+		//fix left margin
+		if($fn_container.width() <= min_width){
+			var width_outside_body = w - $('body').width();
+			$fn_container.css({'margin-left': width_outside_body + 'px'});
+		}
+		
 	});
 }
 
