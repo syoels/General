@@ -65,7 +65,7 @@ function keepWidth(){
 		//fix left margin
 		if($fn_container.width() <= min_width){
 			var width_outside_body = w - $('body').width();
-			$fn_container.css({'margin-left': width_outside_body + 'px'});
+			$fn_container.css({'margin-left': -width_outside_body + 'px'});
 		}
 		
 	});
