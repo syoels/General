@@ -49,7 +49,7 @@ function keepHeight(){
 }
 function keepWidth(){
 	var $fn_container = getDealzoneElement();
-	var min_width = $fn_container.css('min-width
+	var min_width = $fn_container.css('min-width');
 	min_width = parseInt(min_width.substring(0,min_width.indexOf('px')));
 	var w = $(window).width();
 	var body_max_width = (w - min_width) + "px";
