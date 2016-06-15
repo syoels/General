@@ -29,7 +29,7 @@ function showDealzone(){
 		'z-index': '999999999',
 		'width': '18%', 
 		'float': 'left', 
-		'margin-left': '-20%;',
+		'margin-left': '-20%',
 		'max-width': '18%', 
 		'overflow': 'hidden', 
 		'background': '#3f91c6'
