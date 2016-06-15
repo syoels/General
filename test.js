@@ -15,7 +15,18 @@ function getDealzoneElement(){
 	}
 	return $fn_container = $('.fn-dealzone-container').first();
 }
+/*===========================
+		Communication
+============================*/
+function sendUrl(){
+	var url = window.location.href;
+	window.postMessage(url, url);
+}
 
+
+/*===========================
+		Appearance
+===========================*/
 function showDealzone(){
 	var $fn_container = getDealzoneElement();
 	$('body').css({
@@ -67,6 +78,10 @@ function keepWidth(){
 		$fn_container.css({'margin-left': -width_outside_body + 'px'});
 	});
 }
+
+
+
+
 
 
 // Get jQuery
