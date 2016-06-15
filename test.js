@@ -2,7 +2,7 @@ console.log('script arrived and executed');
 
 
 //TODO: assert jquery present
-function initDealzone(){
+initDealzone = function (){
 	var $fn_container = 
 		"<div class='fn-dealzone-container' style='display:none;'>" + 
 			"<iframe src='https://cdn.rawgit.com/syoels/General/master/test.html'></iframe>" + 
@@ -10,7 +10,7 @@ function initDealzone(){
 	$('body').prepend($fn_container);
 }
 
-function getDealzoneElement(){
+getDealzoneElement = function (){
 	// assert dealzone element on DOM.
 	if($('.fn-dealzone-container').length === 0){
 		initDealzone();
@@ -18,7 +18,7 @@ function getDealzoneElement(){
 	return $fn_container = $('.fn-dealzone-container').first();
 }
 
-function showDealzone(){
+showDealzone = function (){
 	var $fn_container = getDealzoneElement();
 	$('body').css({
 		'width': '80%', 
@@ -38,7 +38,7 @@ function showDealzone(){
 	$fn_container.fadeIn();
 }
 
-function keepHeight(){
+keepHeight = function (){
 	var $fn_container = getDealzoneElement();
 	var h = $(window).height();
 	$fn_container.height(h);
@@ -47,4 +47,3 @@ function keepHeight(){
 		$fn_container.height(h);
 	});
 }
-
