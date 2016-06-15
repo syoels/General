@@ -72,7 +72,7 @@ function keepHeight(){
         document.getElementsByTagName("head")[0].appendChild(script);
     }
 
-    loadScript("https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js", function () {
+    loadScript("https://code.jquery.com/jquery-3.0.0.min.js", function () {
 
          //jQuery loaded
          console.log('jquery loaded');
