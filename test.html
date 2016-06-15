@@ -3,21 +3,22 @@
   <div class="dz-head">clickable title img</div>
   
   <div class="dz-body">
-      <div class="dz-item">item 1</div>
-      <div class="dz-item">item 2</div>
-      <div class="dz-item">item 3</div>
-      <div class="dz-item">item 4</div>
-      <div class="dz-item">item 5</div>
+      <div class="dz-item" id="dz-item-1">item 1</div>
+      <div class="dz-item" id="dz-item-2">item 2</div>
+      <div class="dz-item" id="dz-item-3">item 3</div>
+      <div class="dz-item" id="dz-item-4">item 4</div>
+      <div class="dz-item" id="dz-item-5">item 5</div>
   </div>
 
 </div>
 
-
+<script   src="https://code.jquery.com/jquery-3.0.0.min.js"   integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0="   crossorigin="anonymous"></script>
 <script>
-  window.addEventListener("message", receiveMessage, false);
+window.addEventListener("message", receiveMessage, false);
 
 function receiveMessage(event)
 {
+  $('#dz-item-1').text('text changed :)');
   console.log(event);
   var origin = event.origin || event.originalEvent.origin; // For Chrome, the origin property is in the event.originalEvent object.
   if (origin !== "http://example.org:8080")
