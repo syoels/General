@@ -30,7 +30,7 @@ function showDealzone(){
 		'margin-left': '-20%',
 		'max-width': '18%', 
 		'overflow': 'hidden',
-		'min-width': '180px';
+		'min-width': '180px',
 		'background': '#3f91c6'
 	});
 	keepHeight();
