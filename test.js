@@ -29,10 +29,12 @@ function showDealzone(){
 		'float': 'left', 
 		'margin-left': '-20%',
 		'max-width': '18%', 
-		'overflow': 'hidden', 
+		'overflow': 'hidden',
+		'min-width': '180px';
 		'background': '#3f91c6'
 	});
 	keepHeight();
+	keepWidth();
 	$fn_container.fadeIn();
 }
 
@@ -43,6 +45,22 @@ function keepHeight(){
 	$(window).resize(function(){
 		var h = $(window).height();
 		$fn_container.height(h);
+	});
+}
+function keepWidth(){
+	var $fn_container = getDealzoneElement();
+	var min_width = $fn_container.css('min-width
+	min_width = parseInt(min_width.substring(0,min_width.indexOf('px')));
+	var w = $(window).width();
+	var body_max_width = (w - min_width) + "px";
+	$('body').css({'max-width': body_max_width});
+	$(window).resize(function(){
+		var $fn_container = getDealzoneElement();
+		var min_width = $fn_container.css('min-width
+		min_width = parseInt(min_width.substring(0,min_width.indexOf('px')));
+		var w = $(window).width();
+		var body_max_width = (w - min_width) + "px";
+		$('body').css({'max-width': body_max_width});
 	});
 }
 
