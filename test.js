@@ -1,5 +1,6 @@
 console.log('script arrived and executed');
 
+return {a: 'aaaa'};
 
 //TODO: assert jquery present
 function initDealzone(){
