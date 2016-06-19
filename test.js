@@ -3,7 +3,7 @@ console.log('script arrived and executing');
 function initDealzone(){
 	var $fn_container = 
 		"<div class='fn-dealzone-container' style='display:none;'>" + 
-			"<iframe id='dz-iframe' src='https://cdn.rawgit.com/syoels/General/master/test.html'></iframe>" + 
+			"<iframe id='dz-iframe' src='//cdn.rawgit.com/syoels/General/master/test.html'></iframe>" + 
 		"</div>";
 	$('body').prepend($fn_container);
 }
