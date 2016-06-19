@@ -18,6 +18,7 @@ window.addEventListener("message", receiveMessage, false);
 
 function receiveMessage(event)
 {
+  alert("here");
   $('#dz-item-1').text('text changed :)');
   console.log(event);
   var origin = event.origin || event.originalEvent.origin; // For Chrome, the origin property is in the event.originalEvent object.
