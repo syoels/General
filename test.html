@@ -25,5 +25,10 @@ function receiveMessage(event)
   if (origin !== "http://example.org:8080")
     return;
 }
+
+window.onmessage = function(e){
+    $('#dz-item-2').text('2ND FUNCTION WORKED !');
+    }
+};
   
 </script>
