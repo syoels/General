@@ -1,12 +1,17 @@
 console.log('script arrived and executing');
 
 var TARGET = "http://cdn.rawgit.com";
-var DEALZONE_HTML = "//cdn.rawgit.com/syoels/General/fc1caf894d4f089c4058338abe5b6cb93245843b/test.html";
+var DEALZONE_HTML = "//cdn.rawgit.com/syoels/General/36920cd76f2f00fd99ebddcd6077b8acfd8af46e/test.html";
 
 function initDealzone(){
 	var $fn_container = 
 		"<div class='fn-dealzone-container' style='display:none;'>" + 
-			"<iframe id='dz-iframe' src='" + DEALZONE_HTML + "'></iframe>" + 
+			"<iframe id='dz-iframe' src='" + DEALZONE_HTML + "'" + 
+			"style: 'width: 100%; " + 
+				"max-width: 100%;" + 
+				"overflow: hidden;" + 
+				"height: 100%;' " + 
+			"></iframe>" + 
 		"</div>";
 	$('body').prepend($fn_container);
 }
