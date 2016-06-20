@@ -1,0 +1,44 @@
+.fn-dealzone-container{
+  background: rgb(209,209,210); /* Old browsers */
+  background: -moz-linear-gradient(top,  rgba(209,209,210,1) 0%, rgba(216,216,216,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  rgba(209,209,210,1) 0%,rgba(216,216,216,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  rgba(209,209,210,1) 0%,rgba(216,216,216,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d1d1d2', endColorstr='#d8d8d8',GradientType=0 ); /* IE6-9 */
+}
+
+#dz-frame{
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  height: 100%;
+}
+
+.dz-container{
+    font-family: 'Open Sans', sans-serif !important;
+}
+
+.dz-head{
+  height: 70px;
+  background: black;
+  color: white;
+  text-align: center;
+  border-radius: 2px;
+}
+
+.dz-head h3{
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.dz-item {
+  background: rgb(222,224,227); /* Old browsers */
+  background: -moz-linear-gradient(left, rgba(222,224,227,1) 0%, rgba(255,255,255,1) 95%, rgba(216,216,216,1) 95%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, rgba(222,224,227,1) 0%,rgba(255,255,255,1) 95%,rgba(216,216,216,1) 95%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, rgba(222,224,227,1) 0%,rgba(255,255,255,1) 95%,rgba(216,216,216,1) 95%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dee0e3', endColorstr='#d8d8d8',GradientType=1 ); /* IE6-9 */
+  height: 20%;
+  margin: 4px auto;
+  box-shadow: 2px 1px 3px rgba(0,0,0,0.3);
+  border-radius: 2px;
+}
