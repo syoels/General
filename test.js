@@ -19,13 +19,13 @@ function getDealzoneElement(){
 		Communication
 ============================*/
 var TARGET = "http://cdn.rawgit.com";
+var DZ_WINDOW = document.getElementById('dz-iframe').contentWindow;
 function sendUrl(){
 	var url = window.location.href;
 	sendMsg(url);
 }
 function sendMsg(msg){
-	var url = window.location.href;
-	window.postMessage(msg, TARGET);
+	DZ_WINDOW.postMessage(msg, TARGET);
 }
 
 
