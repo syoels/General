@@ -6,7 +6,7 @@
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d1d1d2', endColorstr='#d8d8d8',GradientType=0 ); /* IE6-9 */
 }
 
-#dz-frame{
+#dz-iframe{
   width: 100%;
   max-width: 100%;
   overflow: hidden;
