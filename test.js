@@ -1,7 +1,7 @@
 console.log('script arrived and executing');
 
 var TARGET = "http://cdn.rawgit.com";
-var DEALZONE_HTML = "//cdn.rawgit.com/syoels/General/fdb26bd35a87232bdcae1238b66f053f1630ceb2/test.html";
+var DEALZONE_HTML = "//cdn.rawgit.com/syoels/General/fc1caf894d4f089c4058338abe5b6cb93245843b/test.html";
 
 function initDealzone(){
 	var $fn_container = 
