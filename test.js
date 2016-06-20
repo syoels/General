@@ -1,12 +1,10 @@
 console.log('script arrived and executing');
-var DZ_WINDOW = null;
 function initDealzone(){
 	var $fn_container = 
 		"<div class='fn-dealzone-container' style='display:none;'>" + 
 			"<iframe id='dz-iframe' src='//cdn.rawgit.com/syoels/General/fdb26bd35a87232bdcae1238b66f053f1630ceb2/test.html'></iframe>" + 
 		"</div>";
 	$('body').prepend($fn_container);
-	DZ_WINDOW = $fn_container.children()[0].contentWindow;
 }
 
 function getDealzoneElement(){
@@ -28,8 +26,7 @@ function sendUrl(){
 function sendMsg(msg){
 	var dz_iframe = document.getElementById('dz-iframe');
 	if (!dz_iframe) { return; }
-	DZ_WINDOW = DZ_WINDOW.contentWindow;
-	DZ_WINDOW.postMessage(msg, TARGET);
+	dz_iframe.contentWindow.postMessage(msg, TARGET);
 }
 
 
