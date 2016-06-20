@@ -52,7 +52,6 @@ function showDealzone(){
 		'max-width': '18%', 
 		'overflow': 'hidden',
 		'min-width': '180px',
-		'background': '#3f91c6'
 	});
 	keepHeight();
 	keepWidth();
