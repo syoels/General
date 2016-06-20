@@ -1,11 +1,12 @@
 console.log('script arrived and executing');
-
+var DZ_WINDOW = null;
 function initDealzone(){
 	var $fn_container = 
 		"<div class='fn-dealzone-container' style='display:none;'>" + 
 			"<iframe id='dz-iframe' src='//cdn.rawgit.com/syoels/General/fdb26bd35a87232bdcae1238b66f053f1630ceb2/test.html'></iframe>" + 
 		"</div>";
 	$('body').prepend($fn_container);
+	DZ_WINDOW = $fn_container.children()[0].contentWindow;
 }
 
 function getDealzoneElement(){
@@ -19,7 +20,7 @@ function getDealzoneElement(){
 		Communication
 ============================*/
 var TARGET = "http://cdn.rawgit.com";
-var DZ_WINDOW = null;
+
 function sendUrl(){
 	var url = window.location.href;
 	sendMsg(url);
