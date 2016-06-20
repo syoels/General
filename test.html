@@ -14,11 +14,17 @@
 
 <script   src="https://code.jquery.com/jquery-3.0.0.min.js"   integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0="   crossorigin="anonymous"></script>
 <script>
+
+console.log("script in html is running");
+$ = jQuery; //just in case this is the prob
+$('#dz-item-3').text('script is running and so is jquery.');
+
 window.addEventListener("message", receiveMessage, false);
 
 function receiveMessage(event)
 {
   alert("here");
+  $ = jQuery; //just in case this is the prob
   $('#dz-item-1').text('text changed :)');
   console.log(event);
   var origin = event.origin || event.originalEvent.origin; // For Chrome, the origin property is in the event.originalEvent object.
