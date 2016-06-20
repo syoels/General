@@ -18,9 +18,14 @@ function getDealzoneElement(){
 /*===========================
 		Communication
 ============================*/
+var TARGET = "http://cdn.rawgit.com";
 function sendUrl(){
 	var url = window.location.href;
-	window.postMessage(url, url);
+	sendMsg(url);
+}
+function sendMsg(msg){
+	var url = window.location.href;
+	window.postMessage(msg, TARGET);
 }
 
 
