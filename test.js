@@ -50,8 +50,8 @@ function sendMsg(msg){
 function showDealzone(){
 	var $fn_container = getDealzoneElement();
 	$('body').css({
-		'width': '80%', 
-		'float': 'right'
+		'float': 'right',
+		'width': '100%'
 	});
 	$fn_container.css({
 		'position': 'fixed',
@@ -59,13 +59,15 @@ function showDealzone(){
 		'width': '18%', 
 		'float': 'left', 
 		'margin-left': '-20%',
-		'max-width': '18%', 
+		'max-width': '0%', 
 		'overflow': 'hidden',
 		'min-width': '180px',
 	});
 	keepHeight();
 	keepWidth();
 	$fn_container.fadeIn();
+	$('body').animate({'width', '80%'});
+	$fn_container.animate({'max-width': '18%'});
 }
 
 function keepHeight(){
