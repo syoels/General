@@ -128,6 +128,38 @@
     font-weight: 900;
 }
 
+.heat-container {
+    height: 60%;
+    padding-bottom: 5px;
+}
+
+.heat {
+    width: 13px;
+    border-bottom-color: #FF8335;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    height: 100%;
+    display: inline-block;
+    box-sizing: border-box;
+}
+.heat.heat-1 {
+    border-bottom-width: 10px;
+}
+.heat.heat-2 {
+    border-bottom-width: 17px;
+}
+.heat.heat-3 {
+    border-bottom-width: 24px;
+}
+.heat.heat-41 {
+    border-bottom-width: 31px;
+}
+.heat-txt {
+    font-size: 12px;
+    font-weight: bolder;
+    color: #ff8335;
+}
+
 #dz-item-last {
     height: 500px;
     margin: 4px auto;
