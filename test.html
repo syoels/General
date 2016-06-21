@@ -80,7 +80,7 @@ function handleDemoData(e){
     var carTitle = e.data.data.year + " " + e.data.data.model + " " + e.data.data.make + " " + e.data.data.name;
     $('#dz-car-title').text(carTitle);
     $('.dz-old-price').text('$' + numeral(e.data.data.price).format('0,0'));
-    $('.dz-new-price').text('$' + numeral(e.data.data.price * 0.95).format('0,0')));
+    $('.dz-new-price').text('$' + numeral(e.data.data.price * 0.95).format('0,0'));
   }
 }
 window.addEventListener("message", handleDemoData, false);
