@@ -15,7 +15,7 @@ function sendDemoData(){
 		demoData.data.make = BehindAuto.Make;
 		demoData.data.name = BehindAuto.TrimName;
 	}
-	sendMsg(demoData);
+	sendMsg(demoData, window.location.href);
 }
 
 /*===========================
@@ -50,10 +50,11 @@ function getDealzoneElement(){
 /*===========================
 	Communication
 ============================*/
-function sendMsg(msg){
+function sendMsg(msg, o){
+	var origin = o ? o : TARGET;
 	var dz_iframe = document.getElementById('dz-iframe');
 	if (!dz_iframe) { return; }
-	dz_iframe.contentWindow.postMessage(msg, TARGET);
+	dz_iframe.contentWindow.postMessage(msg, origin);
 }
 
 /*===========================
