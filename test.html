@@ -70,7 +70,6 @@ function writeMsg(txt){
 }
 writeMsg('Dealzone is running. messages here.');
 
-// Another option for message receiving.
 function handleDemoData(e){
   console.log("received demo data. handling");
   console.log(e);
@@ -89,6 +88,7 @@ window.addEventListener("message", handleDemoData, false);
 ============================*/
 window.addEventListener("message", receiveMessage, false);
 function receiveMessage(event) {
+  console.log("in 2nd event handler");
   var data = (typeof event.data === 'string') ? '"' + event.data + '"' : 'data';
   var origin = event.origin || event.originalEvent.origin; // For Chrome, the origin property is in the event.originalEvent object.
   writeMsg('Got ' + data + ' from "' + origin +'"');
