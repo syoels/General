@@ -38,7 +38,7 @@ function initDealzone(){
 		"</div>";
 	$('body').prepend($fn_container);
 	setDealzoneContainrStyle();
-	sendDemoData(); //TODO: delete after demo
+	sendDemoData(TARGET); //TODO: delete after demo
 }
 
 function getDealzoneElement(){
