@@ -1,5 +1,7 @@
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,600' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="//cdn.rawgit.com/syoels/General/8b1dc19b45a58d043ff889c41310256832fba796/test.css">
+<script src="https://code.jquery.com/jquery-3.0.0.min.js" integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0=" crossorigin="anonymous"></script><script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/1.4.5/numeral.min.js"></script>
 
 <div class="dz-container">
 
@@ -56,10 +58,6 @@
 
 </div>
 
-<script   src="https://code.jquery.com/jquery-3.0.0.min.js"   integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0="   crossorigin="anonymous"></script>
-<script>
-
-
 $ = jQuery; //TODO: make sure this is needed, otherwise delete this line
 
 /*===========================
@@ -76,8 +74,8 @@ function handleDemoData(e){
   if(e.data.type && e.data.type == 'carDetails'){
     var carTitle = e.data.data.year + " " + e.data.data.model + " " + e.data.data.make + " " + e.data.data.name;
     $('#dz-car-title').text(carTitle);
-    $('.dz-old-price').text('$' + e.data.data.price);
-    $('.dz-new-price').text('$' + Math.round(parseFloat(e.data.data.price) * 0.95));
+    $('.dz-old-price').text('$' + numeral(e.data.data.price).format('0,0'));
+    $('.dz-new-price').text('$' + numeral(e.data.data.price * 0.95).format('0,0')));
   }
 }
 window.addEventListener("message", handleDemoData, false);
