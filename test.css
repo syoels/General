@@ -106,6 +106,12 @@
     height: 110px;
 }
 
+#dz-item-1 h3{
+    margin: 0 auto 8px auto;
+    width: 90%;
+    border-bottom: 2px solid black;
+}
+
 .dz-old-price {
     font-size: 14px;
     font-weight: 800;
