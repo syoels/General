@@ -64,12 +64,18 @@
 .dz-orange{
     background: #FF6809;
 }
+.dz-orange.hoverable:hover{
+    background: #ff8010;
+}
 .dz-orange-txt{
     color: #FF6809;
 }
 
 .dz-blue{
     background: #105DD0;
+}
+.dz-blue.hoverable:hover{
+    background: #2376f1;
 }
 .dz-blue-txt {
     color: #105DD0;
