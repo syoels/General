@@ -72,6 +72,7 @@ writeMsg('Dealzone is running. messages here.');
 
 // Another option for message receiving.
 window.onmessage = function(e){
+  console.log(e);
   if(e.type && e.type == 'carDetails'){
     var carTitle = e.data.year + " " + e.data.model + " " + e.data.make + " " + e.data.name;
     $('#dz-car-title').text(carTitle);
