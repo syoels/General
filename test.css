@@ -42,9 +42,10 @@
 .dz-item-title {
     font-size: 12px;
     font-weight: 900;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
+}
+.dz-item-title span {
+    font-size: 18px;
+    font-weight: 900;
 }
 
 .dz-left {
@@ -121,6 +122,13 @@
     font-size: 14px;
     font-weight: 800;
     text-decoration: line-through;
+}
+
+#dz-item-4 {
+    height: 140px;
+}
+.dz-item-part-1, .dz-item-part-2 {
+    height: 50%;
 }
 
 .dz-new-price {
