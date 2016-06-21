@@ -73,11 +73,11 @@ writeMsg('Dealzone is running. messages here.');
 // Another option for message receiving.
 window.onmessage = function(e){
   console.log(e);
-  if(e.type && e.type == 'carDetails'){
-    var carTitle = e.data.year + " " + e.data.model + " " + e.data.make + " " + e.data.name;
+  if(e.data.type && e.data.type == 'carDetails'){
+    var carTitle = e.data.data.year + " " + e.data.data.model + " " + e.data.data.make + " " + e.data.data.name;
     $('#dz-car-title').text(carTitle);
-    $('.dz-old-price').text('$' + e.data.price);
-    $('.dz-new-price').text('$' + Math.round(parseFloat(e.data.price) * 0.95));
+    $('.dz-old-price').text('$' + e.data.data.price);
+    $('.dz-new-price').text('$' + Math.round(parseFloat(e.data.data.price) * 0.95));
   }
 }
 
