@@ -1,6 +1,6 @@
 //TODO: move to normal hosting
 var TARGET = "http://cdn.rawgit.com";
-var DEALZONE_HTML = "//cdn.rawgit.com/syoels/General/ef9230584fee0e3164cf7051bb878c8d0164bb4e/test.html";
+var DEALZONE_HTML = "//cdn.rawgit.com/syoels/General/887f82f362f924dadd3062994a6f9a5bf23fd294/test.html";
 
 //TODO: after demo delete demo related code
 /*===========================
@@ -38,7 +38,7 @@ function initDealzone(){
 		"</div>";
 	$('body').prepend($fn_container);
 	setDealzoneContainrStyle();
-	sendDemoData(); //TODO: delete after demo
+	sendDemoData(TARGET); //TODO: delete after demo
 }
 
 function getDealzoneElement(){
