@@ -1,12 +1,12 @@
 //TODO: move to normal hosting
 var TARGET = "http://cdn.rawgit.com";
-var DEALZONE_HTML = "//cdn.rawgit.com/syoels/General/4940c047627c11e79da5ac4c73c4a9ca70c6f0ee/test.html";
+var DEALZONE_HTML = "//cdn.rawgit.com/syoels/General/ef9230584fee0e3164cf7051bb878c8d0164bb4e/test.html";
 
 //TODO: after demo delete demo related code
 /*===========================
  Demo Specific (delete later)
 ============================*/
-function sendDemoData(){
+function sendDemoData(origin){
 	if (typeof BehindAuto == 'object'){
 		var demoData = {type: 'carDetails', data: {}};
 		demoData.data.price = BehindAuto.InternetPrice;
@@ -15,8 +15,9 @@ function sendDemoData(){
 		demoData.data.make = BehindAuto.Make;
 		demoData.data.name = BehindAuto.TrimName;
 	}
-	console.log("sending demo data");
-	sendMsg(demoData, window.location.origin);
+	var o = origin ? origin : window.location.origin;
+	console.log("sending demo data from " + o);
+	sendMsg(demoData, o);
 }
 
 /*===========================
