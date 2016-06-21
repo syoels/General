@@ -84,7 +84,7 @@ function showDealzone(){
 		keepHeight();
 		keepWidth();
 	});
-	sendMsg("jh", "http://www.jayhonda.com");
+	sendDemoData('http://cdn.rawgit.com');
 }
 
 function keepHeight(){
