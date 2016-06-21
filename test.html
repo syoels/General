@@ -10,11 +10,12 @@
     </div>
   </div>
   
+  <!-- TODO: delete message window when no longer needed. -->
   <div class="msg-window">message window</div>
   
   <div class="dz-body">
       <div class="dz-item dz-shade" id="dz-item-1">
-        	<h3>2016 NISSAN VERSA</h3>
+        	<h3 id="dz-car-title">2016 NISSAN VERSA</h3>
       	<div class="dz-item-bottom">
       		<div class="dz-left">
       			<div class="dz-item-title">Price</div>
@@ -58,9 +59,31 @@
 <script   src="https://code.jquery.com/jquery-3.0.0.min.js"   integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0="   crossorigin="anonymous"></script>
 <script>
 
-$ = jQuery; //just in case this is the prob
+
+$ = jQuery; //TODO: make sure this is needed, otherwise delete this line
+
+/*===========================
+    Demo & test functions
+============================*/
+function writeMsg(txt){
+  $('.msg-window').text(txt);
+}
 writeMsg('Dealzone is running. messages here.');
 
+// Another option for message receiving.
+window.onmessage = function(e){
+  if(e.type && e.type == 'carDetails'){
+    var carTitle = e.data.year + " " + e.data.model + " " + e.data.make + " " + e.data.name;
+    $('#dz-car-title').text(carTitle);
+    $('.dz-old-price').text('$' + e.data.price);
+    $('.dz-new-price').text('$' + Math.round(parseFloat(e.data.price) * 0.95));
+  }
+}
+
+
+/*===========================
+        Communication
+============================*/
 window.addEventListener("message", receiveMessage, false);
 function receiveMessage(event) {
   var data = (typeof event.data === 'string') ? '"' + event.data + '"' : 'data';
@@ -68,12 +91,5 @@ function receiveMessage(event) {
   writeMsg('Got ' + data + ' from "' + origin +'"');
 }
 
-function writeMsg(txt){
-  $('.msg-window').text(txt);
-}
-
-// Another option for message receiving.
-window.onmessage = function(e){
-}
   
 </script>
