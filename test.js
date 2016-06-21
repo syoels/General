@@ -84,7 +84,7 @@ function showDealzone(){
 		keepHeight();
 		keepWidth();
 	});
-	sendMsg("jh");
+	sendMsg("jh", "http://www.jayhonda.com");
 }
 
 function keepHeight(){
