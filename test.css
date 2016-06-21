@@ -26,11 +26,12 @@
 
 .dz-item {
   background: rgb(222,224,227); /* Old browsers */
-  background: -moz-linear-gradient(left, rgba(222,224,227,1) 0%, rgba(255,255,255,1) 95%, rgba(216,216,216,1) 95%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(left, rgba(222,224,227,1) 0%,rgba(255,255,255,1) 95%,rgba(216,216,216,1) 95%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to right, rgba(222,224,227,1) 0%,rgba(255,255,255,1) 95%,rgba(216,216,216,1) 95%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dee0e3', endColorstr='#d8d8d8',GradientType=1 ); /* IE6-9 */
+  background: -moz-linear-gradient(left, rgba(222,224,227,1) 0%, rgba(255,255,255,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, rgba(222,224,227,1) 0%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, rgba(222,224,227,1) 0%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dee0e3', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
   height: 20%;
+  max-height: 90px;
   margin: 4px auto;
   box-shadow: 2px 1px 3px rgba(0,0,0,0.3);
   border-radius: 2px;
