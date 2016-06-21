@@ -64,8 +64,8 @@ function showDealzone(){
 		'min-width': '0px',
 	});
 	$fn_container.fadeIn();
-	$('body').animate({'width': '80%'}, 2000);
-	$fn_container.animate({'width': '18%', 'max-width': '18%', 'min-width': '180px'}, 2000, function(){
+	$('body').animate({'width': '80%'}, 1000);
+	$fn_container.animate({'width': '18%', 'max-width': '18%', 'min-width': '180px'}, 1000, function(){
 		keepHeight();
 		keepWidth();
 	});
