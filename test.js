@@ -7,7 +7,7 @@ function initDealzone(){
 	var $fn_container = 
 		"<div class='fn-dealzone-container' style='display:none;'>" + 
 			"<iframe id='dz-iframe' src='" + DEALZONE_HTML + "'" + 
-			"style: 'width: 100%; " + 
+			"style= 'width: 100%; " + 
 				"max-width: 100%;" + 
 				"overflow: hidden;" + 
 				"height: 100%;' " + 
