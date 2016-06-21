@@ -1,8 +1,26 @@
-console.log('script arrived and executing');
-
+//TODO: move to normal hosting
 var TARGET = "http://cdn.rawgit.com";
-var DEALZONE_HTML = "//cdn.rawgit.com/syoels/General/20b02bb0902b27e2178a3ff8ad6c90dd25e0428f/test.html";
+var DEALZONE_HTML = "//cdn.rawgit.com/syoels/General/ea5855167ffeecb699b7531c26ba82bfeec86b07/test.html";
 
+//TODO: after demo delete demo related code
+/*===========================
+ Demo Specific (delete later)
+============================*/
+function sendDemoData(){
+	if (typeof BehindAuto == 'object'){
+		var demoData = {type: 'carDetails', data: {}};
+		demoData.data.price = BehindAuto.InternetPrice;
+		demoData.data.year = BehindAuto.YearName;
+		demoData.data.model = BehindAuto.Model;
+		demoData.data.make = BehindAuto.Make;
+		demoData.data.name = BehindAuto.TrimName;
+	}
+	sendMsg(demoData);
+}
+
+/*===========================
+	Init
+============================*/
 function initDealzone(){
 	if($('.fn-dealzone-container').length > 0){
 		return;
@@ -18,6 +36,7 @@ function initDealzone(){
 		"</div>";
 	$('body').prepend($fn_container);
 	setDealzoneContainrStyle();
+	sendDemoData(); //TODO: delete after demo
 }
 
 function getDealzoneElement(){
@@ -31,18 +50,11 @@ function getDealzoneElement(){
 /*===========================
 	Communication
 ============================*/
-
-
-function sendUrl(){
-	var url = window.location.href;
-	sendMsg(url);
-}
 function sendMsg(msg){
 	var dz_iframe = document.getElementById('dz-iframe');
 	if (!dz_iframe) { return; }
 	dz_iframe.contentWindow.postMessage(msg, TARGET);
 }
-
 
 /*===========================
 	Appearance
@@ -116,15 +128,14 @@ function setDealzoneContainrStyle(){
 
 
 
-
+/*===========================
+	    Utils
+===========================*/
 // Get jQuery
 (function () {
-
     function loadScript(url, callback) {
-
         var script = document.createElement("script")
         script.type = "text/javascript";
-
         if (script.readyState) { //IE
             script.onreadystatechange = function () {
                 if (script.readyState == "loaded" || script.readyState == "complete") {
@@ -140,8 +151,5 @@ function setDealzoneContainrStyle(){
         script.src = url;
         document.getElementsByTagName("head")[0].appendChild(script);
     }
-    loadScript("https://code.jquery.com/jquery-3.0.0.min.js", function () {
-         //jQuery loaded
-         console.log('jquery loaded');
-    });
+    loadScript("https://code.jquery.com/jquery-3.0.0.min.js", function () {});
 })();
