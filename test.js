@@ -4,16 +4,15 @@ var TARGET = "http://cdn.rawgit.com";
 var DEALZONE_HTML = "//cdn.rawgit.com/syoels/General/811314e988e9a685a39ad7f99560191e36c7a591/test.html";
 
 function initDealzone(){
+	if($('.fn-dealzone-container').length > 0){
+		return;
+	}
 	var $fn_container = 
 		"<div class='fn-dealzone-container' style='display:none;'>" + 
-			"<iframe id='dz-iframe' frameborder='0' src='" + DEALZONE_HTML + "'" + 
-			"style= 'width: 100%; " + 
-				"max-width: 100%;" + 
-				"overflow: hidden;" + 
-				"height: 100%;' " + 
-			"></iframe>" + 
+			"<iframe id='dz-iframe' frameborder='0' src='" + DEALZONE_HTML + "'></iframe>" + 
 		"</div>";
 	$('body').prepend($fn_container);
+	setDealzoneContainrStyle();
 }
 
 function getDealzoneElement(){
@@ -23,6 +22,7 @@ function getDealzoneElement(){
 	}
 	return $fn_container = $('.fn-dealzone-container').first();
 }
+
 /*===========================
 	Communication
 ============================*/
@@ -93,7 +93,18 @@ function keepWidth(){
 	});
 }
 
-
+function setDealzoneContainrStyle(){
+	var $fn_container = getDealzoneElement();
+	$fn_container[0].style.cssText = "width: 100%; " + 
+				"max-width: 100%;" + 
+				"overflow: hidden;" + 
+				"height: 100%;" + 
+				"background: rgb(209,209,210);" + 
+				"background: -moz-linear-gradient(top,  rgba(209,209,210,1) 0%, rgba(216,216,216,1) 100%);" + 
+  				"background: -webkit-linear-gradient(top,  rgba(209,209,210,1) 0%,rgba(216,216,216,1) 100%);" + 
+  				"background: linear-gradient(to bottom,  rgba(209,209,210,1) 0%,rgba(216,216,216,1) 100%);" + 
+  				"filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d1d1d2', endColorstr='#d8d8d8',GradientType=0 );";
+}
 
 
 
