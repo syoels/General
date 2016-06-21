@@ -1,6 +1,6 @@
 //TODO: move to normal hosting
 var TARGET = "http://cdn.rawgit.com";
-var DEALZONE_HTML = "//cdn.rawgit.com/syoels/General/14b91403282366a39286af8063b13c0f7ca9a8f7/test.html";
+var DEALZONE_HTML = "//cdn.rawgit.com/syoels/General/b99b544c492cce03c5ea1f6048438bfdecc007ab/test.html";
 
 //TODO: after demo delete demo related code
 /*===========================
