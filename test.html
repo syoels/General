@@ -71,7 +71,8 @@ function writeMsg(txt){
 writeMsg('Dealzone is running. messages here.');
 
 // Another option for message receiving.
-window.onmessage = function(e){
+function handleDemoData(e){
+  console.log("received demo data. handling");
   console.log(e);
   if(e.data.type && e.data.type == 'carDetails'){
     var carTitle = e.data.data.year + " " + e.data.data.model + " " + e.data.data.make + " " + e.data.data.name;
@@ -80,6 +81,7 @@ window.onmessage = function(e){
     $('.dz-new-price').text('$' + Math.round(parseFloat(e.data.data.price) * 0.95));
   }
 }
+window.addEventListener("message", handleDemoData, false);
 
 
 /*===========================
