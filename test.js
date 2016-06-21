@@ -84,6 +84,7 @@ function showDealzone(){
 		keepHeight();
 		keepWidth();
 	});
+	sendMsg("jh");
 }
 
 function keepHeight(){
