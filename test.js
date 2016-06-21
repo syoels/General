@@ -63,11 +63,12 @@ function showDealzone(){
 		'overflow': 'hidden',
 		'min-width': '0px',
 	});
-	keepHeight();
-	keepWidth();
 	$fn_container.fadeIn();
 	$('body').animate({'width': '80%'}, 2000);
-	$fn_container.animate({'width': '18%', 'max-width': '18%', 'min-width': '180px'}, 2000);
+	$fn_container.animate({'width': '18%', 'max-width': '18%', 'min-width': '180px'}, 2000, function(){
+		keepHeight();
+		keepWidth();
+	});
 }
 
 function keepHeight(){
