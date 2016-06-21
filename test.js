@@ -66,7 +66,7 @@ function showDealzone(){
 	keepHeight();
 	keepWidth();
 	$fn_container.fadeIn();
-	$('body').animate({'width', '80%'});
+	$('body').animate({'width': '80%'});
 	$fn_container.animate({'max-width': '18%'});
 }
 
