@@ -1,6 +1,6 @@
 //TODO: move to normal hosting
 var TARGET = "http://cdn.rawgit.com";
-var DEALZONE_HTML = "//cdn.rawgit.com/syoels/General/1006ad71da297eeb940eda4eb0f69a574eeb52c3/test.html";
+var DEALZONE_HTML = "//cdn.rawgit.com/syoels/General/4940c047627c11e79da5ac4c73c4a9ca70c6f0ee/test.html";
 
 //TODO: after demo delete demo related code
 /*===========================
@@ -15,7 +15,8 @@ function sendDemoData(){
 		demoData.data.make = BehindAuto.Make;
 		demoData.data.name = BehindAuto.TrimName;
 	}
-	sendMsg(demoData, window.location.href);
+	console.log("sending demo data");
+	sendMsg(demoData, window.location.origin);
 }
 
 /*===========================
