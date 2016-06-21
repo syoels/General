@@ -11,10 +11,13 @@
   border-radius: 2px;
 }
 
-.dz-head h3{
+.dz-head .dz-title-container{
   position: relative;
   top: 50%;
   transform: translateY(-50%);
+}
+.dz-head h3{
+    margin: 0;g
 }
 
 .dz-item {
@@ -31,4 +34,12 @@
   padding: 5px;
   box-sizing: border-box;
   text-align: center;
+}
+
+.dz-orange{
+    color: #FF6809;
+}
+
+.dz-blue{
+    color: #105DD0;
 }
