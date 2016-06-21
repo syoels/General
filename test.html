@@ -1,5 +1,5 @@
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,600' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="//cdn.rawgit.com/syoels/General/544bca551ce1c9955fd32338e3901ed0436b7412/test.css">
+<link rel="stylesheet" href="//cdn.rawgit.com/syoels/General/69d743d0f60501e8f050a329a3dcef75131f26fc/test.css">
 
 <div class="dz-container">
 
@@ -53,7 +53,7 @@
 
 console.log("script in html is running");
 $ = jQuery; //just in case this is the prob
-$('#dz-item-3').text('script is running and so is jquery.');
+writeMsg('script is running and so is jquery.');
 
 window.addEventListener("message", receiveMessage, false);
 
@@ -61,15 +61,19 @@ function receiveMessage(event)
 {
   alert("here");
   $ = jQuery; //just in case this is the prob
-  $('#dz-item-1').text('text changed :)');
+  writeMsg('text changed :)');
   console.log(event);
   var origin = event.origin || event.originalEvent.origin; // For Chrome, the origin property is in the event.originalEvent object.
   if (origin !== "http://example.org:8080")
     return;
 }
 
+function writeMsg(txt){
+  $('.msg-window').text(txt);
+}
+
 window.onmessage = function(e){
-    $('#dz-item-2').text('2ND FUNCTION WORKED !');
+    writeMsg('2ND FUNCTION WORKED !');
     }
   
 </script>
