@@ -1,5 +1,5 @@
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,600' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="//cdn.rawgit.com/syoels/General/7f7f6b20ed52f2cf2ca073c27c0b8080bdb47b60/test.css">
+<link rel="stylesheet" href="//cdn.rawgit.com/syoels/General/8c32e0438bdf3ea031de7c1f20cb23cb86a6b6e9/test.css">
 
 <div class="dz-container">
 
@@ -63,9 +63,9 @@ writeMsg('Dealzone is running. messages here.');
 
 window.addEventListener("message", receiveMessage, false);
 function receiveMessage(event) {
-  var data = (typeof event.data === 'string') ? event.data : 'data';
+  var data = (typeof event.data === 'string') ? '"' + event.data + '"' : 'data';
   var origin = event.origin || event.originalEvent.origin; // For Chrome, the origin property is in the event.originalEvent object.
-  writeMsg('Got "' + data + '" from "' + origin +'"');
+  writeMsg('Got ' + data + ' from "' + origin +'"');
 }
 
 function writeMsg(txt){
