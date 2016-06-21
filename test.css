@@ -27,13 +27,14 @@
   background: -webkit-linear-gradient(left, rgba(222,224,227,1) 0%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to right, rgba(222,224,227,1) 0%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dee0e3', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
-  height: 20%;
-  max-height: 90px;
-  margin: 4px auto;
-  border-radius: 2px;
-  padding: 5px;
-  box-sizing: border-box;
-  text-align: center;
+    height: 13%;
+    min-height: 70px;
+    max-height: 140px;
+    margin: 4px auto;
+    border-radius: 2px;
+    padding: 5px;
+    box-sizing: border-box;
+    text-align: center;
 }
 
 .dz-item-title {
@@ -53,6 +54,9 @@
     width: 65%;
     float: right;
     height: 100%;
+}
+.dz-item-bottom {
+    height: 50%;
 }
 
 .dz-orange{
@@ -79,6 +83,7 @@
     color: white;
     padding: 5px 12px;
     margin: 2px;
+    cursor: pointer;
 }
 
 .msg-window{
@@ -88,17 +93,17 @@
     color: #777777;
     text-align: center;
     font-size: 12px;
+    margin: 5px 0;
 }
 
-
-#dz-item-1 {
-    height: 110px;
-}
-
-#dz-item-1 h3 {
+.dz-title-container h3 {
     margin: 0 auto 8px auto;
     border-bottom: 2px solid black;
     width: 90%;
+}
+
+#dz-item-1 {
+    height: 110px;
 }
 
 .dz-old-price {
