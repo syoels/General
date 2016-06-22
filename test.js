@@ -192,6 +192,7 @@ function addMsg(head, body, liveTime, delay){
 	$msg.appendTo('#dz-msg-container').delay(delay_ms).fadeIn();
 	$msg.delay(delay_ms + live_ms).fadeOut();
 	$msg.find('.dz-msg-x').click(function(){
+		console.log("msg x clicked");
 		$msg.fadeOut();
 	});
 }
