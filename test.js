@@ -66,14 +66,15 @@ var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
 
 // Listen to message from child window
 eventer(messageEvent,function(e) {
-  console.log('parent received message!:  ',e.data);
+  console.log('parent received message!:  ');
+  console.log(e);
   if(e.data.type){
   	switch (e.data.type){
   		case 'call':
-  			$('<a href="tel:' + e.data.data + '" target="_blank"></a>').click();
+  			$('<a href="tel:' + e.data.data + '" target="_blank" style="display:none;"></a>').appendTo('body').click();
   			break;
   		case 'navigate':
-  			$('<a href="https://www.google.com/maps/dir/Current+Location/"'+ e.data.data + 'target="_blank"></a>').click();
+  			$('<a href="https://www.google.com/maps/dir/Current+Location/"'+ e.data.data + 'target="_blank" style="display:none;"></a>').appendTo('body').click();
   			break;
   		default:
   			console.log('no handler yet for ' + e.data.type);
