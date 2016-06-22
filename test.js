@@ -188,13 +188,9 @@ function addMsg(head, body, liveTime, delay){
 	var delay_ms = delay ? delay : 0;
 	setTimeout(function(){
 		
-	    $(msgHtml).appendTo('#dz-msg-container').fadeIn();
-	    // Disappear
 	    var live_ms = liveTime ? liveTime : 6000;
-	    setTimeout(function(){
-	        $('#dz-msg-'+ id).fadeOut();
-	    }, live_ms);
-	    
+	    $(msgHtml).appendTo('#dz-msg-container').fadeIn().delay(live_ms).fadeOut();
+
 	}, delay_ms);
 }
 
