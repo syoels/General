@@ -185,25 +185,20 @@ function addMsg(head, body, liveTime, delay){
 	'<div class="dz-msg-head">' + head + '</div>' +
 	'<div class="dz-msg-body">' + body + '</div>' +
 	'</div>';
-	$(msgHtml).appendTo('#dz-msg-container')
+	$(msgHtml).appendTo('#dz-msg-container');
+	
 	// Appear
 	var delay_ms = delay ? delay : 0;
-	function createMsgAppearance(id){
-		var msgAppearance = function(){
-			
-		}
-	}
+	var live_ms = liveTime ? liveTime : 6000;
 	
-	setTimeout(function(){
-		
-	    
-	    // Disappear
-	    var live_ms = liveTime ? liveTime : 6000;
-	    
-	    $('#dz-msg-'+ id).delay(live_ms).fadeOut();
-	    
-	    
-	}, delay_ms);
+	function createMsgAppearance(id, live_ms){
+		var msgAppearance = function(){
+			$('#dz-msg-' + id).fadeIn();
+			$('#dz-msg-' + id).delay(live_ms).fadeOut();
+		}
+		return msgAppearance;
+	}
+	setTimeout(createMsgAppearance(id, live_ms), delay_ms);
 }
 
 
