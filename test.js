@@ -206,6 +206,9 @@ function addMessages(){
     loadScript("https://code.jquery.com/jquery-3.0.0.min.js", function () {
     	
     	showDealzone();
+    	addMessages();
+    	addMsg("Someone viewed this car", "5 minutes ago", 10000, 5000);
+    	addMsg("Someone just placed a hold on this car", "", 10000, 12000);
     	
     });
 })();
