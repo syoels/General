@@ -44,12 +44,10 @@
         '<div class="dz-msg-body">' + body + '</div>' +
         '</div>';
         
-        console.log(msgHtml);
-        
         // Appear
         var delay_ms = delay ? delay : 0;
         setTimeout(function(){
-            $('#dz-msg-'+ id).appendTo('#dz-msg-container').fadeIn();
+            $(msgHtml).appendTo('#dz-msg-container').fadeIn();
             // Disappear
             var live_ms = liveTime ? liveTime : 6000;
             setTimeout(function(){
