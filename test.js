@@ -190,9 +190,9 @@ function addMsg(head, body, liveTime, delay){
 	var live_ms = liveTime ? liveTime : 6000;
 	var $msg = $(msgHtml);
 	$msg.appendTo('#dz-msg-container').delay(delay_ms).fadeIn().delay(live_ms).fadeOut();
-	$msg.find('.dz-msg-x').click(){
+	$msg.find('.dz-msg-x').click(function(){
 		$msg.fadeOut();
-	};
+	});
 
 /*===========================
 	    Utils
