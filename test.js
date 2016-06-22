@@ -1,6 +1,6 @@
 //TODO: move to normal hosting
 var TARGET = "http://cdn.rawgit.com";
-var DEALZONE_HTML = "//cdn.rawgit.com/syoels/General/60771b94419f5c89655fdcbb7c73a5d7caa59149/test.html";
+var DEALZONE_HTML = "//cdn.rawgit.com/syoels/General/9b4dda306c4b3be6f2cf872fcece5d54e741f450/test.html";
 
 //TODO: after demo delete demo related code
 /*===========================
@@ -113,7 +113,7 @@ function showDealzone(){
 			keepWidth();
 		});
 		
-	}, 1000);
+	}, 1500);
 
 }
 
