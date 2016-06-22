@@ -2,7 +2,7 @@
 var TARGET = "http://cdn.rawgit.com";
 var DZ_ORIGIN = "http://cdn.rawgit.com";
 var DEALZONE_HTML = "//cdn.rawgit.com/syoels/General/9b4dda306c4b3be6f2cf872fcece5d54e741f450/test.html";
-var MESSAGES_HTML = "//cdn.rawgit.com/syoels/General/d950666b2f9de69ee987c479bd5ad707bb736a34/messages.html";
+var DZ_CSS = "http://cdn.rawgit.com/syoels/General/f2600409c2d8923a46f213bc5eb47bfeda1d3953/dz.css";
 
 //TODO: after demo delete demo related code
 /*===========================
@@ -31,15 +31,9 @@ function initDealzone(){
 	}
 	var $fn_container = 
 		"<div class='fn-dealzone-container' style='display:none;'>" + 
-			"<iframe id='dz-iframe' frameborder='0' src='" + DEALZONE_HTML + "'" + 
-			"style= 'width: 100%; " + 
-				"max-width: 100%;" + 
-				"overflow: hidden;" + 
-				"height: 100%;' " + 
-			"></iframe>" + 
+			"<iframe id='dz-iframe' frameborder='0' src='" + DEALZONE_HTML + "></iframe>" + 
 		"</div>";
 	$('body').prepend($fn_container);
-	setDealzoneContainrStyle();
 }
 
 function getDealzoneElement(){
@@ -93,21 +87,16 @@ eventer(messageEvent,function(e) {
 /*===========================
 	Appearance
 ===========================*/
+function loadDzCss(){
+	$.get(DZ_CSS, null, function(result) {
+	    $("body").prepend("<style>" + result + "</style>"); 
+	},'html');
+}
 function showDealzone(){
 	var $fn_container = getDealzoneElement();
 	$('body').css({
 		'float': 'right',
 		'width': '100%'
-	});
-	$fn_container.css({
-		'position': 'fixed',
-		'z-index': '999999999',
-		'width': '0%', 
-		'float': 'left', 
-		'margin-left': '-20%',
-		'max-width': '0%', 
-		'overflow': 'hidden',
-		'min-width': '0px',
 	});
 	setTimeout(function(){
 		
@@ -154,29 +143,15 @@ function keepWidth(){
 		var width_outside_body = w - $('body').width();
 		$fn_container.css({'margin-left': -width_outside_body + 'px'});
 	});
-}
-
-function setDealzoneContainrStyle(){
-	var $fn_container = getDealzoneElement();
-	$fn_container[0].style.cssText = "width: 100%; " + 
-				"max-width: 100%;" + 
-				"overflow: hidden;" + 
-				"height: 100%;" + 
-				"background: rgb(209,209,210);" + 
-				"background: -moz-linear-gradient(top,  rgba(209,209,210,1) 0%, rgba(216,216,216,1) 100%);" + 
-  				"background: -webkit-linear-gradient(top,  rgba(209,209,210,1) 0%,rgba(216,216,216,1) 100%);" + 
-  				"background: linear-gradient(to bottom,  rgba(209,209,210,1) 0%,rgba(216,216,216,1) 100%);" + 
-  				"filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d1d1d2', endColorstr='#d8d8d8',GradientType=0 );";
-}
+}s
 
 
 /*===========================
 	   Messages
 ============================*/
-function addMessages(){
-	$.get(MESSAGES_HTML, null, function(result) {
-	    $("body").prepend(result); 
-	},'html');
+function initMessages(){
+	var contHTML = '<div id="dz-msg-container"></div>'
+	$('body').prepend(contHTML);
 }
 function addMsg(head, body, liveTime, delay){
 	var id = $('.dz-msg').length;
@@ -206,10 +181,6 @@ function addMsg(head, body, liveTime, delay){
 }
 
 
-
-
-
-
 /*===========================
 	    Utils
 ===========================*/
@@ -235,6 +206,8 @@ function addMsg(head, body, liveTime, delay){
     }
     loadScript("https://code.jquery.com/jquery-3.0.0.min.js", function () {
     	
+    	loadDzCss();
+    	initMessages();
     	showDealzone();
     	addMessages();
     	addMsg("Someone viewed this car", "5 minutes ago", 10000, 5000);
