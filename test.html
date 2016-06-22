@@ -94,6 +94,11 @@ function handleDemoData(e){
 }
 window.addEventListener("message", handleDemoData, false);
 
+//2nd try
+window.onmessage = function(e){
+    console.log("got data");
+    writeMsg('Got data');
+    }
 
 /*===========================
         Communication
