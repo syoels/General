@@ -185,16 +185,23 @@ function addMsg(head, body, liveTime, delay){
 	'<div class="dz-msg-head">' + head + '</div>' +
 	'<div class="dz-msg-body">' + body + '</div>' +
 	'</div>';
+	$(msgHtml).appendTo('#dz-msg-container')
 	// Appear
 	var delay_ms = delay ? delay : 0;
+	function createMsgAppearance(id){
+		var msgAppearance = function(){
+			
+		}
+	}
+	
 	setTimeout(function(){
 		
-	    $(msgHtml).appendTo('#dz-msg-container').fadeIn();
+	    
 	    // Disappear
 	    var live_ms = liveTime ? liveTime : 6000;
-	    setTimeout(function(){
-	        $('#dz-msg-'+ id).fadeOut();
-	    }, live_ms);
+	    
+	    $('#dz-msg-'+ id).delay(live_ms).fadeOut();
+	    
 	    
 	}, delay_ms);
 }
