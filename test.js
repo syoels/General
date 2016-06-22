@@ -31,7 +31,7 @@ function initDealzone(){
 	}
 	var $fn_container = 
 		"<div class='fn-dealzone-container' style='display:none;'>" + 
-			"<iframe id='dz-iframe' frameborder='0' src='" + DEALZONE_HTML + "></iframe>" + 
+			"<iframe id='dz-iframe' frameborder='0' src='" + DEALZONE_HTML + "'></iframe>" + 
 		"</div>";
 	$('body').prepend($fn_container);
 }
