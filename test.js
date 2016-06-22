@@ -143,7 +143,7 @@ function keepWidth(){
 		var width_outside_body = w - $('body').width();
 		$fn_container.css({'margin-left': -width_outside_body + 'px'});
 	});
-}s
+}
 
 
 /*===========================
