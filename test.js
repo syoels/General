@@ -80,7 +80,7 @@ eventer(messageEvent,function(e) {
   			break;
   		case 'navigate':
   			var id = $('.dz-call-btn').length;
-  			$('<a class="dz-nav-btn" id="dz-nav-' + id + '" href="https://www.google.com/maps/dir/Current+Location/"'+ e.data.data + 'target="_blank" style="display:none;"></a>').appendTo('body');
+  			$('<a class="dz-nav-btn" id="dz-nav-' + id + '" href="https://www.google.com/maps/dir/Current+Location/'+ e.data.data + '" target="_blank" style="display:none;"></a>').appendTo('body');
   			document.getElementById('dz-nav-'+ id).click();
   			break;
   		default:
