@@ -1,5 +1,6 @@
 //TODO: move to normal hosting
 var TARGET = "http://cdn.rawgit.com";
+var DZ_ORIGIN = "http://cdn.rawgit.com";
 var DEALZONE_HTML = "//cdn.rawgit.com/syoels/General/9b4dda306c4b3be6f2cf872fcece5d54e741f450/test.html";
 
 //TODO: after demo delete demo related code
@@ -66,9 +67,11 @@ var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
 
 // Listen to message from child window
 eventer(messageEvent,function(e) {
-  console.log('parent received message!:  ');
-  console.log(e);
+  if(e.origin !== DZ_ORIGIN){
+  	return;
+  }
   if(e.data.type){
+  	console.log('request for ' + e.data.type + ' to: ' + e.data.data);
   	switch (e.data.type){
   		case 'call':
   			$('<a href="tel:' + e.data.data + '" target="_blank" style="display:none;"></a>').appendTo('body').click();
