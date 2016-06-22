@@ -206,8 +206,8 @@ function addMsg(head, body, liveTime, delay){
 	}
 
 	$(msgHtml).appendTo('#dz-msg-container');
-	setTimout(getEnterFunc(id), delay_ms);
-	setTimout(getExitFunc(id), delay_ms + live_ms);
+	setTimeout(getEnterFunc(id), delay_ms);
+	setTimeout(getExitFunc(id), delay_ms + live_ms);
 	
 	$('#' + id).find('.dz-msg-x').click(function(){
 		console.log("msg x clicked");
