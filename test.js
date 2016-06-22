@@ -2,6 +2,7 @@
 var TARGET = "http://cdn.rawgit.com";
 var DZ_ORIGIN = "http://cdn.rawgit.com";
 var DEALZONE_HTML = "//cdn.rawgit.com/syoels/General/9b4dda306c4b3be6f2cf872fcece5d54e741f450/test.html";
+var MESSAGES_HTML = "//cdn.rawgit.com/syoels/General/a3820ad8f75739154eb7afa5c39deee202baf1f1/messages.html";
 
 //TODO: after demo delete demo related code
 /*===========================
@@ -168,6 +169,15 @@ function setDealzoneContainrStyle(){
   				"filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d1d1d2', endColorstr='#d8d8d8',GradientType=0 );";
 }
 
+
+/*===========================
+	   Messages
+============================*/
+function addMessages(){
+	$.get(MESSAGES_HTML, null, function(result) {
+	    $("body").prepend(result); 
+	},'html');
+}
 
 
 /*===========================
