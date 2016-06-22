@@ -180,12 +180,15 @@ function addMessages(){
 }
 function addMsg(head, body, liveTime, delay){
 	var id = $('.dz-msg').length;
+	console.log('addMsg. id is: ' + id);
 	var msgHtml = '<div class="dz-msg" id="dz-msg-'+ id + '" style="display:none;">' + 
 	'<div class="dz-msg-x">x</div>' +
 	'<div class="dz-msg-head">' + head + '</div>' +
 	'<div class="dz-msg-body">' + body + '</div>' +
 	'</div>';
 	$(msgHtml).appendTo('#dz-msg-container');
+	var containers = $('#dz-msg-container').length;
+	console.log('containers found: ' + containers);
 	
 	// Appear
 	var delay_ms = delay ? delay : 0;
@@ -193,6 +196,7 @@ function addMsg(head, body, liveTime, delay){
 	
 	function createMsgAppearance(id, live_ms){
 		var msgAppearance = function(){
+			console.log('fading in id: ' + id);
 			$('#dz-msg-' + id).fadeIn();
 			$('#dz-msg-' + id).delay(live_ms).fadeOut();
 		}
