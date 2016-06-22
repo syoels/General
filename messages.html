@@ -22,39 +22,4 @@
 }
 </style>
 
-<div id="dz-msg-container">
-  
-    <div class="dz-msg demo-msg" style="display:none;">
-      <div class="dz-msg-head">Someone viewed this car <span>5</span> minutes ago</div>
-      <div class="dz-msg-body"></div>
-    </div>
-    
-    <div class="dz-msg demo-msg" style="display:none;">
-      <div class="dz-msg-head">Someone placed a hold on this car!</div>
-      <div class="dz-msg-body"></div>
-    </div>
-  
-  </div>
-<script>
-    function addMsg(head, body, liveTime, delay){
-        
-        var id = $('.dz-msg').length;
-        var msgHtml = '<div class="dz-msg" id="dz-msg-'+ id + '" style="display:none;">' + 
-        '<div class="dz-msg-head">' + head + '</div>' +
-        '<div class="dz-msg-body">' + body + '</div>' +
-        '</div>';
-        
-        // Appear
-        var delay_ms = delay ? delay : 0;
-        setTimeout(function(){
-            $(msgHtml).appendTo('#dz-msg-container').fadeIn();
-            // Disappear
-            var live_ms = liveTime ? liveTime : 6000;
-            setTimeout(function(){
-                $('#dz-msg-'+ id).fadeOut();
-            }, live_ms);
-            
-        }, delay_ms);
-        
-    }
-</script>
+<div id="dz-msg-container"></div>
