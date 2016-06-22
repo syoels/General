@@ -3,6 +3,7 @@ var TARGET = "http://cdn.rawgit.com";
 var DZ_ORIGIN = "http://cdn.rawgit.com";
 var DEALZONE_HTML = "//cdn.rawgit.com/syoels/General/9b4dda306c4b3be6f2cf872fcece5d54e741f450/test.html";
 var DZ_CSS = "http://cdn.rawgit.com/syoels/General/41c1b75d8eac6046774db39b25e67027b24a4564/dz.css";
+var MS_TO_SHOW = 2000;
 
 //TODO: after demo delete demo related code
 /*===========================
@@ -111,7 +112,7 @@ function showDealzone(){
 			keepWidth();
 		});
 		
-	}, 1500);
+	}, MS_TO_SHOW);
 
 }
 
@@ -205,12 +206,11 @@ function addMsg(head, body, liveTime, delay){
         document.getElementsByTagName("head")[0].appendChild(script);
     }
     loadScript("https://code.jquery.com/jquery-3.0.0.min.js", function () {
-    	
     	loadDzCss();
     	initMessages();
     	showDealzone();
-    	addMsg("Someone viewed this car", "5 minutes ago", 10000, 5000);
-    	addMsg("Someone just placed a hold on this car", "", 10000, 12000);
+    	addMsg("Someone viewed this car", "5 minutes ago", 12000, 8000);
+    	addMsg("Someone just placed a hold on this car", "", 12000, 19000);
     	
     });
 })();
