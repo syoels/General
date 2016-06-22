@@ -1,6 +1,6 @@
 //TODO: move to normal hosting
 var TARGET = "http://cdn.rawgit.com";
-var DEALZONE_HTML = "//cdn.rawgit.com/syoels/General/dfcbf4dc27223b789d8ed4be606bb9008fcddd2f/test.html";
+var DEALZONE_HTML = "//cdn.rawgit.com/syoels/General/551e0a2dab90953deed3e38bd07d8e86c3b7de86/test.html";
 
 //TODO: after demo delete demo related code
 /*===========================
@@ -15,7 +15,7 @@ function sendDemoData(origin){
 		demoData.data.make = BehindAuto.Make;
 		demoData.data.name = BehindAuto.TrimName;
 	}
-	var o = origin ? origin : window.location.origin;
+	var o = origin ? origin : TARGET;
 	console.log("sending demo data from " + o);
 	sendMsg(demoData, o);
 }
@@ -38,7 +38,7 @@ function initDealzone(){
 		"</div>";
 	$('body').prepend($fn_container);
 	setDealzoneContainrStyle();
-	sendDemoData(TARGET); //TODO: delete after demo
+	sendDemoData();
 }
 
 function getDealzoneElement(){
@@ -46,7 +46,8 @@ function getDealzoneElement(){
 	if($('.fn-dealzone-container').length === 0){
 		initDealzone();
 	}
-	return $fn_container = $('.fn-dealzone-container').first();
+	var $fn_container = $('.fn-dealzone-container').first();
+	return $fn_container;
 }
 
 /*===========================
@@ -84,7 +85,6 @@ function showDealzone(){
 		keepHeight();
 		keepWidth();
 	});
-	sendDemoData('http://cdn.rawgit.com');
 }
 
 function keepHeight(){
