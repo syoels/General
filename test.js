@@ -180,7 +180,7 @@ function addMessages(){
 }
 function addMsg(head, body, liveTime, delay){
 	var id = "dz-msg-" + $('.dz-msg').length;
-	var msgHtml = '<div class="dz-msg" id="+ id + '" style="display:none;">' + 
+	var msgHtml = '<div class="dz-msg" id="'+ id + '" style="display:none;">' + 
 	'<div class="dz-msg-x">x</div>' + 
 	'<div class="dz-msg-head">' + head + '</div>' +
 	'<div class="dz-msg-body">' + body + '</div>' +
