@@ -2,7 +2,7 @@
 var TARGET = "http://cdn.rawgit.com";
 var DZ_ORIGIN = "http://cdn.rawgit.com";
 var DEALZONE_HTML = "//cdn.rawgit.com/syoels/General/9b4dda306c4b3be6f2cf872fcece5d54e741f450/test.html";
-var MESSAGES_HTML = "//cdn.rawgit.com/syoels/General/73872b926262d030b837d6e86939db9d0606ad3e/messages.html";
+var MESSAGES_HTML = "//cdn.rawgit.com/syoels/General/d950666b2f9de69ee987c479bd5ad707bb736a34/messages.html";
 
 //TODO: after demo delete demo related code
 /*===========================
@@ -181,18 +181,18 @@ function addMessages(){
 function addMsg(head, body, liveTime, delay){
 	var id = $('.dz-msg').length;
 	var msgHtml = '<div class="dz-msg" id="dz-msg-'+ id + '" style="display:none;">' + 
+	'<div class="dz-msg-x">x</div>' + 
 	'<div class="dz-msg-head">' + head + '</div>' +
 	'<div class="dz-msg-body">' + body + '</div>' +
 	'</div>';
-	// Appear
+	// Appear & disappear
 	var delay_ms = delay ? delay : 0;
-	setTimeout(function(){
-		
-	    var live_ms = liveTime ? liveTime : 6000;
-	    $(msgHtml).appendTo('#dz-msg-container').fadeIn().delay(live_ms).fadeOut();
-
-	}, delay_ms);
-}
+	var live_ms = liveTime ? liveTime : 6000;
+	var $msg = $(msgHtml);
+	$msg.appendTo('#dz-msg-container').delay(delay_ms).fadeIn().delay(live_ms).fadeOut();
+	$msg.find('.dz-msg-x').click(){
+		$msg.fadeOut();
+	};
 
 /*===========================
 	    Utils
