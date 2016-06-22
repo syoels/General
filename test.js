@@ -68,7 +68,7 @@ var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
 eventer(messageEvent,function(e) {
   console.log('parent received message!:  ',e.data);
   if(e.data.type){
-  	switch e.data.type{
+  	switch (e.data.type){
   		case 'call':
   			$('<a href="tel:' + e.data.data + '" target="_blank"></a>').click();
   			break;
