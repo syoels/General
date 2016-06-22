@@ -38,7 +38,6 @@ function initDealzone(){
 		"</div>";
 	$('body').prepend($fn_container);
 	setDealzoneContainrStyle();
-	sendDemoData();
 }
 
 function getDealzoneElement(){
@@ -79,12 +78,21 @@ function showDealzone(){
 		'overflow': 'hidden',
 		'min-width': '0px',
 	});
-	$fn_container.fadeIn();
-	$('body').animate({'width': '80%'}, 1000);
-	$fn_container.animate({'width': '18%', 'max-width': '18%', 'min-width': '180px'}, 1000, function(){
-		keepHeight();
-		keepWidth();
-	});
+	setTimeout(function(){
+		
+		//TODO: delete this after demo
+		sendDemoData();
+		
+		//enter screen
+		$fn_container.fadeIn();
+		$('body').animate({'width': '80%'}, 1000);
+		$fn_container.animate({'width': '18%', 'max-width': '18%', 'min-width': '180px'}, 1000, function(){
+			keepHeight();
+			keepWidth();
+		});
+		
+	}, 1000);
+
 }
 
 function keepHeight(){
