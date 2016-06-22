@@ -155,5 +155,9 @@ function setDealzoneContainrStyle(){
         script.src = url;
         document.getElementsByTagName("head")[0].appendChild(script);
     }
-    loadScript("https://code.jquery.com/jquery-3.0.0.min.js", function () {});
+    loadScript("https://code.jquery.com/jquery-3.0.0.min.js", function () {
+    	
+    	showDealzone();
+    	
+    });
 })();
