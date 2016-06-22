@@ -1,6 +1,6 @@
 //TODO: move to normal hosting
 var TARGET = "http://cdn.rawgit.com";
-var DEALZONE_HTML = "//cdn.rawgit.com/syoels/General/551e0a2dab90953deed3e38bd07d8e86c3b7de86/test.html";
+var DEALZONE_HTML = "//cdn.rawgit.com/syoels/General/60771b94419f5c89655fdcbb7c73a5d7caa59149/test.html";
 
 //TODO: after demo delete demo related code
 /*===========================
@@ -58,6 +58,28 @@ function sendMsg(msg, o){
 	if (!dz_iframe) { return; }
 	dz_iframe.contentWindow.postMessage(msg, origin);
 }
+
+// Create IE + others compatible event handler
+var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
+var eventer = window[eventMethod];
+var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
+
+// Listen to message from child window
+eventer(messageEvent,function(e) {
+  console.log('parent received message!:  ',e.data);
+  if(e.data.type){
+  	switch e.data.type{
+  		case 'call':
+  			$('<a href="tel:' + e.data.data + '" target="_blank"></a>').click();
+  			break;
+  		case 'navigate':
+  			$('<a href="https://www.google.com/maps/dir/Current+Location/"'+ e.data.data + 'target="_blank"></a>').click();
+  			break;
+  		default:
+  			console.log('no handler yet for ' + e.data.type);
+  	}
+  }
+},false);
 
 /*===========================
 	Appearance
