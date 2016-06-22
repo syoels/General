@@ -74,10 +74,14 @@ eventer(messageEvent,function(e) {
   	console.log('request for ' + e.data.type + ' to: ' + e.data.data);
   	switch (e.data.type){
   		case 'call':
-  			$('<a href="tel:' + e.data.data + '" target="_blank" style="display:none;"></a>').appendTo('body').click();
+  			var id = $('.dz-call-btn').length;
+  			$('<a class="dz-call-btn" id="dz-call-'+ id +'" href="tel:' + e.data.data + '" target="_blank" style="display:none;"></a>').appendTo('body');
+  			document.getElementById('dz-call-'+ id).click();
   			break;
   		case 'navigate':
-  			$('<a href="https://www.google.com/maps/dir/Current+Location/"'+ e.data.data + 'target="_blank" style="display:none;"></a>').appendTo('body').click();
+  			var id = $('.dz-call-btn').length;
+  			$('<a class="dz-nav-btn" id="dz-nav-' + id + '" href="https://www.google.com/maps/dir/Current+Location/"'+ e.data.data + 'target="_blank" style="display:none;"></a>').appendTo('body');
+  			document.getElementById('dz-nav-'+ id).click();
   			break;
   		default:
   			console.log('no handler yet for ' + e.data.type);
