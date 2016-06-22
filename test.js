@@ -185,16 +185,21 @@ function addMsg(head, body, liveTime, delay){
 	'<div class="dz-msg-head">' + head + '</div>' +
 	'<div class="dz-msg-body">' + body + '</div>' +
 	'</div>';
+	
 	// Appear & disappear
 	var delay_ms = delay ? delay : 0;
 	var live_ms = liveTime ? liveTime : 6000;
-	var $msg = $(msgHtml);
-	$msg.appendTo('#dz-msg-container').delay(delay_ms).fadeIn();
-	$msg.delay(delay_ms + live_ms).fadeOut();
-	$msg.find('.dz-msg-x').click(function(){
-		console.log("msg x clicked");
-		$msg.fadeOut();
-	});
+	
+	// Wait for container
+	setTimeout(function(){
+		var $msg = $(msgHtml);
+		$msg.appendTo('#dz-msg-container').delay(delay_ms).fadeIn();
+		$msg.delay(delay_ms + live_ms).fadeOut();
+		$msg.find('.dz-msg-x').click(function(){
+			console.log("msg x clicked");
+			$msg.fadeOut();
+		});
+	}, 0);
 }
 
 /*===========================
