@@ -179,8 +179,8 @@ function addMessages(){
 	},'html');
 }
 function addMsg(head, body, liveTime, delay){
-	var id = $('.dz-msg').length;
-	var msgHtml = '<div class="dz-msg" id="dz-msg-'+ id + '" style="display:none;">' + 
+	var id = "dz-msg-" + $('.dz-msg').length;
+	var msgHtml = '<div class="dz-msg" id="+ id + '" style="display:none;">' + 
 	'<div class="dz-msg-x">x</div>' + 
 	'<div class="dz-msg-head">' + head + '</div>' +
 	'<div class="dz-msg-body">' + body + '</div>' +
@@ -190,16 +190,29 @@ function addMsg(head, body, liveTime, delay){
 	var delay_ms = delay ? delay : 0;
 	var live_ms = liveTime ? liveTime : 6000;
 	
-	// Wait for container
-	setTimeout(function(){
-		var $msg = $(msgHtml);
-		$msg.appendTo('#dz-msg-container').delay(delay_ms).fadeIn();
-		$msg.delay(delay_ms + live_ms).fadeOut();
-		$msg.find('.dz-msg-x').click(function(){
-			console.log("msg x clicked");
-			$msg.fadeOut();
+	function getEnterFunc(id){
+		var enter = function(){
+		$('#' + id).fadeIn();
+		}
+		return enter;
+	}
+	function getExitFunc(id){
+		var exit = function(){
+		$('#' + id).fadeOut(400, function(){
+			$(this).remove();
 		});
-	}, 0);
+		}
+		return exit;
+	}
+
+	$(msgHtml).appendTo('#dz-msg-container');
+	setTimout(getEnterFunc(id), delay_ms);
+	setTimout(getExitFunc(id), delay_ms + live_ms);
+	
+	$('#' + id).find('.dz-msg-x').click(function(){
+		console.log("msg x clicked");
+		$msg.fadeOut();
+	});
 }
 
 /*===========================
