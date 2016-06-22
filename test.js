@@ -2,7 +2,7 @@
 var TARGET = "http://cdn.rawgit.com";
 var DZ_ORIGIN = "http://cdn.rawgit.com";
 var DEALZONE_HTML = "//cdn.rawgit.com/syoels/General/9b4dda306c4b3be6f2cf872fcece5d54e741f450/test.html";
-var MESSAGES_HTML = "//cdn.rawgit.com/syoels/General/13079c4f59abf5dbc28ab45e471110700bb5a729/messages.html";
+var MESSAGES_HTML = "//cdn.rawgit.com/syoels/General/08507bdd87a595511d869e22b1866bda17a66a3a/messages.html";
 
 //TODO: after demo delete demo related code
 /*===========================
