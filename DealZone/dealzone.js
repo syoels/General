@@ -4,7 +4,7 @@ $ = jQuery;//TODO: make sure this is needed, otherwise delete this line
  ============================*/
 function writeMsg(txt){
     $('.msg-window').text(txt);
-}
+} 
 writeMsg('Dealzone is running. messages here.');
 function handleDemoData(e){
     if(e.data.type && e.data.type == 'carDetails'){

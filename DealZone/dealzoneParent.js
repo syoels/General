@@ -4,7 +4,7 @@ var DZ_ORIGIN = "http://cdn.rawgit.com";
 var DEALZONE_HTML = "http://cdn.rawgit.com/syoels/General/master/DealZone/dealzone.html";
 var DZ_CSS = "http://cdn.rawgit.com/syoels/General/master/DealZone/dealzoneParent.css";
 var MS_TO_SHOW = 2000;
-
+ 
 //TODO: after demo delete demo related code
 /*===========================
  Demo Specific (delete later)
