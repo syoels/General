@@ -55,6 +55,8 @@ $('#dz-btn-call').click(function(){
  Appearance
  ============================*/
 function insertItem(idx, innerHTML){
+ 
+ console.log("in insert item with idx " + idx + " and html: " + innerHTML);
 
     var id = $('.dz-item').length;
     var $item = $('<div class="dz-item dz-shade dz-bg-light" id="dz-item-' + id + '" >' + innerHTML + '</div>');
@@ -67,12 +69,17 @@ function insertItem(idx, innerHTML){
     });
     $item.children().hide();
 
+console.log("created item: ");
+console.log($item);
 
     var insertAfter = $('.dz-item').get(idx);
     if(insertAfter == undefined){
+     console.log("appending to .dz-body");
         $item.appendTo('.dz-body');
         return;
     } else {
+     console.log("inserting after: " );
+     console.log(insertAfter);
         $item.insertAfter(insertAfter);
     }
 
@@ -84,6 +91,7 @@ function insertItem(idx, innerHTML){
             'padding': '5px',
             'max-width': '400px',
         }, 600, function(){
+         console.log("animations done. fading in content.");
             $item.children().fadeIn();
         });
     });
