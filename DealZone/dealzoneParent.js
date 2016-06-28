@@ -1,5 +1,5 @@
 //TODO: move to normal hosting
-var TAG = "Branch_v1.1";
+var TAG = "Branch_v1.2";
 var TARGET = "http://cdn.rawgit.com";
 var DZ_ORIGIN = "http://cdn.rawgit.com";
 var DEALZONE_HTML = "http://cdn.rawgit.com/syoels/General/" + TAG + "/DealZone/dealzone.html";
