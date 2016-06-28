@@ -1,0 +1,69 @@
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,600' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="dealzone.css">
+<script src="https://code.jquery.com/jquery-3.0.0.min.js" integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0=" crossorigin="anonymous"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/1.4.5/numeral.min.js"></script>
+<script src="dealzone.js"></script>
+
+<div class="dz-container">
+
+    <div class="dz-head dz-shade">
+        <div class="dz-title-container dz-vertical-center">
+            <h3>DEALZONE</h3>
+            <img src="https://autoleadstar.com/images/logo.svg" alt="AutoLeadStar" style="width: 45%; margin-top: 5px;">
+        </div>
+    </div>
+
+    <!-- TODO: delete message window when no longer needed. -->
+    <div class="msg-window">message window</div>
+
+    <div class="dz-body">
+        <div class="dz-item dz-shade" id="dz-item-1">
+            <h3 id="dz-car-title">2016 NISSAN VERSA</h3>
+            <div class="dz-item-bottom">
+                <div class="dz-left">
+                    <div class="dz-item-title">Price</div>
+                </div>
+                <div class="dz-right">
+                    <div class="dz-old-price">$13,195</div>
+                    <div class="dz-new-price dz-blue-txt">$10,999</div>
+                </div>
+            </div>
+        </div>
+        <div class="dz-item dz-shade" id="dz-item-2">
+            <div class="dz-vertical-center">
+                <button class="dz-btn dz-orange hoverable" id="dz-btn-drive">TEST DRIVE</button>
+                <button class="dz-btn dz-blue hoverable" id="dz-btn-call">CALL</button>
+            </div>
+        </div>
+
+        <div class="dz-item dz-shade" id="dz-item-4">
+
+            <div class="dz-item-part-1">
+                <div class="dz-left">
+                    <div class="dz-item-title dz-vertical-center">Heat score</div>
+                </div>
+                <div class="dz-right">
+                    <div class="heat-container">
+                        <div class="heat heat-1"></div>
+                        <div class="heat heat-2"></div>
+                        <div class="heat heat-3"></div>
+                        <div class="heat heat-4"></div>
+                    </div>
+                    <div class="heat-txt">FREAKIN' HOT</div>
+                </div>
+            </div>
+            <div class="dz-item-part-2">
+                <div class="dz-item-title dz-vertical-center"><span>58</span> other people are currently viewing this car</div>
+            </div>
+        </div>
+        <div class="dz-item dz-shade" id="dz-item-5">
+            <div class="dz-left">
+                <div class="dz-item-title">Availability</div>
+            </div>
+            <div class="dz-right"></div>
+        </div>
+
+        <div class="dz-shade dz-blue" id="dz-item-last"></div>
+    </div>
+
+</div>
