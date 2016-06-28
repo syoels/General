@@ -24,11 +24,6 @@
 }
 
 .dz-item {
-    background: rgb(222,224,227); /* Old browsers */
-    background: -moz-linear-gradient(left, rgba(222,224,227,1) 0%, rgba(255,255,255,1) 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(left, rgba(222,224,227,1) 0%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to right, rgba(222,224,227,1) 0%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dee0e3', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
     height: 10%;
     min-height: 70px;
     max-height: 140px;
@@ -38,6 +33,19 @@
     box-sizing: border-box;
     text-align: center;
 }
+
+.dz-bg-light{
+    background: #F9F9F3;
+}
+.dz-bg-gradient{
+    background: rgb(222,224,227); /* Old browsers */
+    background: -moz-linear-gradient(left, rgba(222,224,227,1) 0%, rgba(255,255,255,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, rgba(222,224,227,1) 0%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, rgba(222,224,227,1) 0%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dee0e3', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
+}
+
+
 
 .dz-item-title {
     font-size: 12px;
@@ -80,6 +88,26 @@
 }
 .dz-blue-txt {
     color: #105DD0;
+}
+
+.dz-teal{
+    background: #29BAF3;
+}
+.dz-teal.hoverable:hover{
+    background: #61D2FF;
+}
+.dz-teal-txt {
+    color: #29BAF3;
+}
+
+.dz-pink{
+    background: #FF5757;
+}
+.dz-pink.hoverable:hover{
+    background: #FF6B6B;
+}
+.dz-pink-txt {
+    color: #FF5757;
 }
 
 .dz-btn {
@@ -143,13 +171,26 @@
 
 .heat {
     width: 13px;
-    border-bottom-color: #FF8335;
     border-bottom-width: 1px;
     border-bottom-style: solid;
     height: 100%;
     display: inline-block;
     box-sizing: border-box;
 }
+
+.heat-container.pink .heat{
+    border-bottom-color: #FF5757;
+}
+.heat-container.orange .heat{
+    border-bottom-color: #FF8335;
+}
+.heat-container.blue .heat{
+    border-bottom-color: #105DD0;
+}
+.heat-container.teal .heat{
+    border-bottom-color: #29BAF3;
+}
+
 .heat.heat-1 {
     border-bottom-width: 10px;
 }
