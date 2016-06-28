@@ -1,10 +1,14 @@
 $ = jQuery;//TODO: make sure this is needed, otherwise delete this line
+
+
+
+
 /*===========================
  Demo & test functions
  ============================*/
 function writeMsg(txt){
     $('.msg-window').text(txt);
-} 
+}
 writeMsg('Dealzone is running. messages here.');
 function handleDemoData(e){
     if(e.data.type && e.data.type == 'carDetails'){
@@ -15,6 +19,9 @@ function handleDemoData(e){
     }
 }
 window.addEventListener("message", handleDemoData, false);
+
+
+
 /*===========================
  Communication
  ============================*/
@@ -34,5 +41,47 @@ $('#dz-btn-drive').click(function(){
 $('#dz-btn-call').click(function(){
     var msg = {type: 'call', data: '8558777009'}
     messageParent(msg);
+    var newItemHTML = '<div class="dz-vertical-center">' +
+        '<button class="dz-btn dz-pink hoverable" id="dz-btn-drive">TEST DRIVE</button>' +
+        '<button class="dz-btn dz-teal hoverable" id="dz-btn-call">CALL</button>' +
+        '</div>';
+    insertItem(2, newItemHTML);
 });
 
+
+
+
+/*===========================
+ Appearance
+ ============================*/
+function insertItem(idx, innerHTML){
+
+    var insertAfter = $('.dz-item').get(i);
+    if(insertAfter == undefined){
+        //TODO: insert into .dz-body
+        return;
+    }
+    var id = $('.dz-item').length;
+    var $item = $('<div class="dz-item dz-shade dz-bg-light" id="dz-item-' + id + '" >' + innerHTML + '</div>');
+    $item.css({
+        'min-height': '0px',
+        'max-height': '0px',
+        'overflow': 'hidden',
+        'padding': '0px',
+        'max-width': '0px',
+    });
+    $item.children().hide();
+    $item.insertAfter(insertAfter);
+    $item.animate({ //height
+        'min-height': '70px',
+        'max-height': '200px',
+    }, 800, function(){
+        $item.animate({ //width
+            'padding': '5px',
+            'max-width': '400px',
+        }, 600, function(){
+            $item.children().fadeIn();
+        });
+    });
+
+}
