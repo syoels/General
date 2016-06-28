@@ -56,11 +56,6 @@ $('#dz-btn-call').click(function(){
  ============================*/
 function insertItem(idx, innerHTML){
 
-    var insertAfter = $('.dz-item').get(i);
-    if(insertAfter == undefined){
-        //TODO: insert into .dz-body
-        return;
-    }
     var id = $('.dz-item').length;
     var $item = $('<div class="dz-item dz-shade dz-bg-light" id="dz-item-' + id + '" >' + innerHTML + '</div>');
     $item.css({
@@ -71,7 +66,16 @@ function insertItem(idx, innerHTML){
         'max-width': '0px',
     });
     $item.children().hide();
-    $item.insertAfter(insertAfter);
+
+
+    var insertAfter = $('.dz-item').get(idx);
+    if(insertAfter == undefined){
+        $item.appendTo('.dz-body');
+        return;
+    } else {
+        $item.insertAfter(insertAfter);
+    }
+
     $item.animate({ //height
         'min-height': '70px',
         'max-height': '200px',
