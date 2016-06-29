@@ -54,10 +54,16 @@ function setupButtons() {
 $(document).ready(function() {
     $items = $('.dz-item');
     for(var i = 0; i < $items.length; i++){
-        setTimeout(function(){
-            console.log("adding 'in' to current item.");
-            $($items[i]).addClass("in");
-        }, 500 + i * 250);
+        function enter(i){
+            return function(){
+                setTimeout(function(){
+                    console.log("adding 'in' to current item.");
+                    $($items[i]).addClass("in");
+                }, 500 + i * 250);
+            }
+        }
+        enter(i)();
+
     }
     setupButtons();
 });
