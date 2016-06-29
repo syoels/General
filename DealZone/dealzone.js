@@ -44,6 +44,7 @@ $('#dz-btn-call').click(function(){
 });
 
 
+
 /*===========================
  Appearance
  ============================*/
@@ -71,7 +72,7 @@ function insertItem(idx, innerHTML){
 
     $item.animate({ //height
         'min-height': '70px',
-        'max-height': '200px',
+        'max-height': '200px'
     }, 400, function(){
         $item.animate({ //width
             'padding': '5px',
