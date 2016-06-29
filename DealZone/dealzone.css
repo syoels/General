@@ -1,3 +1,8 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+
 .dz-container{
     font-family: 'Open Sans', sans-serif !important;
     height: 100%;
@@ -246,15 +251,18 @@
     border-right: 3px solid white;
     box-shadow: 4px 0px 8px rgba(0,0,0,0.4);
 }
-.dz-min-tite {
+.dz-min-title {
     position: absolute;
     height: 10%;
     min-height: 100px;
     max-height: 300px;
     text-align: center;
 }
-.dz-min-tite h3 {
+.dz-min-title h3{
     color: white;
+    text-shadow: 0px 3px 2px rgba(0,0,0,0.4);
+}
+.dz-title-container h3{
     text-shadow: 0px 3px 2px rgba(0,0,0,0.4);
 }
 .dz-minified-txt {
