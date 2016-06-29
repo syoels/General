@@ -41,14 +41,21 @@ body{
 
 .dz-item {
     height: 10%;
-    min-height: 70px;
-    max-height: 140px;
+    /*min-height: 70px;*/
+    /*max-height: 140px;*/
     margin: 4px auto;
     border-radius: 2px;
-    padding: 5px;
+    /*padding: 5px;*/
     box-sizing: border-box;
     text-align: center;
+
+    min-height: 0px;
+    max-height: 0px;
+    overflow: hidden;
+    padding: 0px;
+    max-width: 0px;
 }
+
 
 .dz-item.in{
     animation-name: dz-item-entrance;

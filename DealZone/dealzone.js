@@ -52,6 +52,12 @@ function setupButtons() {
     });
 }
 $(document).ready(function() {
+    $items = $('.dz-item');
+    for(var i = 0; i < $items.length; i++){
+        setTimeout(function(){
+            $items.get(i).addClass("in");
+        }, 500 + i * 250);
+    }
     setupButtons();
 });
 
