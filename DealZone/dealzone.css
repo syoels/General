@@ -59,7 +59,7 @@ body{
 
 .dz-item.in{
     animation-name: dz-item-entrance;
-    animation-duration: 1s;
+    animation-duration: 1.5s;
     min-height: 70px;
     max-height: 200px;
     padding: 5px;

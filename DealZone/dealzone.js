@@ -59,7 +59,7 @@ $(document).ready(function() {
                 setTimeout(function(){
                     console.log("adding 'in' to current item.");
                     $($items[i]).addClass("in");
-                }, 500 + i * 250);
+                }, 1200 + i * 300);
             }
         }
         enter(i)();
