@@ -94,9 +94,9 @@ function dzInsert(item_name){
             break;
         case "heat":
             break;
-        case: "car":
+        case "car":
             break;
-        case: "others":
+        case "others":
             break;
         default:
             break;
