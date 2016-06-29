@@ -34,6 +34,11 @@
     text-align: center;
 }
 
+.dz-item.in{
+    animation-name: dz-item-entrance;
+    animation-duration: 1s;
+}
+
 .dz-bg-light{
     background: #F9F9F3;
 }
@@ -203,6 +208,10 @@
 .heat.heat-4 {
     border-bottom-width: 31px;
 }
+.heat.heat-5 {
+    border-bottom-width: 38px;
+}
+
 .heat-txt {
     font-size: 12px;
     font-weight: bolder;
@@ -213,4 +222,25 @@
     height: 500px;
     margin: 4px auto;
     border-radius: 2px;
+}
+
+
+@keyframes dz-item-entrance {
+    0%   {
+        min-height: 0px;
+        max-height: 0px;
+        overflow: hidden;
+        padding: 0px;
+        max-width: 0px;
+    }
+    40%  {
+        min-height: 70px;
+        max-height: 200px;
+        padding: 0px;
+        max-width: 0px;
+    }
+    100% {
+        padding: 5px;
+        max-width: 400px;
+    }
 }

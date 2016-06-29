@@ -41,14 +41,7 @@ $('#dz-btn-drive').click(function(){
 $('#dz-btn-call').click(function(){
     var msg = {type: 'call', data: '8558777009'}
     messageParent(msg);
-    var newItemHTML = '<div class="dz-vertical-center">' +
-        '<button class="dz-btn dz-pink hoverable" id="dz-btn-drive">TEST DRIVE</button>' +
-        '<button class="dz-btn dz-teal hoverable" id="dz-btn-call">CALL</button>' +
-        '</div>';
-    insertItem(2, newItemHTML);
 });
-
-
 
 
 /*===========================
@@ -79,7 +72,7 @@ function insertItem(idx, innerHTML){
     $item.animate({ //height
         'min-height': '70px',
         'max-height': '200px',
-    }, 800, function(){
+    }, 400, function(){
         $item.animate({ //width
             'padding': '5px',
             'max-width': '400px',
@@ -87,5 +80,24 @@ function insertItem(idx, innerHTML){
             $item.children().fadeIn();
         });
     });
+}
 
+function dzInsert(item_name){
+    switch(item_name){
+        case "ctas":
+            var newItemHTML = '<div class="dz-vertical-center">' +
+                '<button class="dz-btn dz-pink hoverable" id="dz-btn-drive">TEST DRIVE</button>' +
+                '<button class="dz-btn dz-teal hoverable" id="dz-btn-call">CALL</button>' +
+                '</div>';
+            insertItem(2, newItemHTML);
+            break;
+        case "heat":
+            break;
+        case: "car":
+            break;
+        case: "others":
+            break;
+        default:
+            break;
+    }
 }
