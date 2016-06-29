@@ -142,31 +142,37 @@ function keepWidth(){
     var w = $(window).width();
     var body_max_width = (w - min_width) + "px";
     $('body').css({'max-width': body_max_width});
-    $(window).resize(function(){
-        var $fn_container = getDealzoneElement();
-        var min_width = $fn_container.css('min-width');
-        min_width = parseInt(min_width.substring(0,min_width.indexOf('px')));
-        var w = $(window).width();
-        var body_max_width = (w - min_width) + "px";
-        $('body').css({'max-width': body_max_width});
-
-        //fix left margin
-        var width_outside_body = w - $('body').width();
-        $fn_container.css({'margin-left': -width_outside_body + 'px'});
-    });
+    $(window).resize(fixDzWidth);
 }
+function fixDzWidth(){
+    var $fn_container = getDealzoneElement();
+    var min_width = $fn_container.css('min-width');
+    min_width = parseInt(min_width.substring(0,min_width.indexOf('px')));
+    var w = $(window).width();
+    var body_max_width = (w - min_width) + "px";
+    $('body').css({'max-width': body_max_width});
+
+    //fix left margin
+    var width_outside_body = w - $('body').width();
+    $fn_container.css({'margin-left': -width_outside_body + 'px'});
+}
+
 function minimizeDealzone(){
     sessionStorage["dealzone-minimized"] = true;
 
     var $fn_container = getDealzoneElement();
-    $('body').animate({'width': '90%'}, 1000);
+    $('body').animate({'width': '90%'}, 1000, fixDzWidth);
     $fn_container.animate({'width': '8%', 'max-width': '8%', 'min-width': '120px'}, 1000);
+
+    //fix left margin
+    var width_outside_body = w - $('body').width();
+    $fn_container.animate({'margin-left': -width_outside_body});
 }
 function maximizeDealzone(){
     sessionStorage["dealzone-minimized"] = false;
 
     var $fn_container = getDealzoneElement();
-    $('body').animate({'width': '80%'}, 1000);
+    $('body').animate({'width': '80%'}, 1000, fixDzWidth);
     $fn_container.animate({'width': '18%', 'max-width': '18%', 'min-width': '180px'}, 1000);
 }
 
@@ -180,7 +186,6 @@ function initMessages(){
 }
 function addMsg(head, body, liveTime, delay){
     var id = $('.dz-msg').length;
-    console.log('addMsg. id is: ' + id);
     var msgHtml = '<div class="dz-msg" id="dz-msg-'+ id + '" style="display:none;">' +
         '<div class="dz-msg-x">x</div>' +
         '<div class="dz-msg-head">' + head + '</div>' +
@@ -188,7 +193,6 @@ function addMsg(head, body, liveTime, delay){
         '</div>';
     $(msgHtml).appendTo('#dz-msg-container');
     var containers = $('#dz-msg-container').length;
-    console.log('containers found: ' + containers);
 
     // Appear
     var delay_ms = delay ? delay : 0;
@@ -196,7 +200,6 @@ function addMsg(head, body, liveTime, delay){
 
     function createMsgAppearance(id, live_ms){
         var msgAppearance = function(){
-            console.log('fading in id: ' + id);
             $('#dz-msg-' + id).fadeIn();
             $('#dz-msg-' + id).delay(live_ms).fadeOut();
         }

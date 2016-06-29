@@ -22,6 +22,7 @@ body{
     position: absolute;
     height: inherit;
     padding: 0 10px;
+    cursor: pointer;
 }
 #dz-minimize img {
     height: 30%;
