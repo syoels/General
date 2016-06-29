@@ -60,6 +60,10 @@ body{
 .dz-item.in{
     animation-name: dz-item-entrance;
     animation-duration: 1s;
+    min-height: 70px;
+    max-height: 200px;
+    padding: 5px;
+    max-width: 400px;
 }
 
 .dz-bg-light{
@@ -328,3 +332,4 @@ body{
         max-width: 400px;
     }
 }
+
