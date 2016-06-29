@@ -34,21 +34,26 @@ function receiveMessage(event) {
 function messageParent(msg){
     window.parent.postMessage(msg, '*');
 }
-$('#dz-btn-drive').click(function(){
-    var msg = {type: 'navigate', data: '175 Broadway Ave, Bedford, OH'}
-    messageParent(msg);
-});
-$('#dz-btn-call').click(function(){
-    var msg = {type: 'call', data: '8558777009'}
-    messageParent(msg);
-});
-$('#dz-minimize').click(function(){
-    minimizeDealzone();
-});
-$('#dz-maximize').click(function(){
-    maximizeDealzone();
-});
 
+function setupButtons() {
+    $('#dz-btn-drive').click(function () {
+        var msg = {type: 'navigate', data: '175 Broadway Ave, Bedford, OH'}
+        messageParent(msg);
+    });
+    $('#dz-btn-call').click(function () {
+        var msg = {type: 'call', data: '8558777009'}
+        messageParent(msg);
+    });
+    $('#dz-minimize').click(function () {
+        minimizeDealzone();
+    });
+    $('#dz-maximize').click(function () {
+        maximizeDealzone();
+    });
+}
+$(document).ready(function() {
+    setupButtons();
+});
 
 /*===========================
  Appearance
