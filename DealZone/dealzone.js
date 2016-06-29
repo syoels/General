@@ -42,12 +42,28 @@ $('#dz-btn-call').click(function(){
     var msg = {type: 'call', data: '8558777009'}
     messageParent(msg);
 });
-
+$('#dz-minimize').click(function(){
+    minimizeDealzone();
+});
+$('#dz-maximize').click(function(){
+    maximizeDealzone();
+});
 
 
 /*===========================
  Appearance
  ============================*/
+function minimizeDealzone(){
+    messageParent({type: 'minimize'});
+    $('.dz-minified').fadeIn();
+    $('.dz-maximized').fadeOut();
+}
+function maximizeDealzone(){
+    messageParent({type: 'maximize'});
+    $('.dz-minified').fadeOut();
+    $('.dz-maximized').fadeIn();
+}
+
 function insertItem(idx, innerHTML){
 
     var id = $('.dz-item').length;

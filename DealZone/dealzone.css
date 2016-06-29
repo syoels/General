@@ -13,6 +13,15 @@
     border-radius: 2px;
 }
 
+#dz-minimize {
+    position: absolute;
+    height: inherit;
+    padding: 0 10px;
+}
+#dz-minimize img {
+    height: 30%;
+}
+
 .dz-vertical-center{
     position: relative;
     top: 50%;
@@ -223,6 +232,64 @@
     margin: 4px auto;
     border-radius: 2px;
 }
+
+.dz-minified {
+    position: absolute;
+    height: 100%;
+    background: #29baf3;
+    z-index: 9999;
+    max-width: 85%;
+    margin: 0;
+    width: 100%;
+    padding: 0;
+    box-sizing: border-box;
+    border-right: 3px solid white;
+    box-shadow: 4px 0px 8px rgba(0,0,0,0.4);
+}
+.dz-min-tite {
+    position: absolute;
+    height: 10%;
+    min-height: 100px;
+    max-height: 300px;
+    text-align: center;
+}
+.dz-min-tite h3 {
+    color: white;
+    text-shadow: 0px 3px 2px rgba(0,0,0,0.4);
+}
+.dz-minified-txt {
+    width: 75%;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    font-family: 'Open Sans';
+    font-size: 13px;
+    font-style: italic;
+    padding: 10px 0;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    position: absolute;
+    left: 10%;
+    color: white;
+}
+.div-expand {
+    width: 40px;
+    height: 40px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 4px 0px 8px rgba(0,0,0,0.4);
+    color: #29baf3;
+    text-align: center;
+    font-size: 28px;
+    right: -20px;
+    position: absolute;
+    cursor: pointer;
+}
+.div-expand img {
+    height: 55%;
+}
+
+
 
 
 @keyframes dz-item-entrance {

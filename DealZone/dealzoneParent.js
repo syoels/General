@@ -80,6 +80,14 @@ eventer(messageEvent,function(e) {
                 $('<a class="dz-nav-btn" id="dz-nav-' + id + '" href="https://www.google.com/maps/dir/Current+Location/'+ e.data.data + '" target="_blank" style="display:none;"></a>').appendTo('body');
                 document.getElementById('dz-nav-'+ id).click();
                 break;
+            case 'maximize':
+                console.log("maximizing!");
+                maximizeDealzone();
+                break;
+            case 'minimize':
+                console.log("minimizing!");
+                minimizeDealzone();
+                break;
             default:
                 console.log('no handler yet for ' + e.data.type);
         }
@@ -114,7 +122,6 @@ function showDealzone(){
         });
 
     }, MS_TO_SHOW);
-
 }
 
 function keepHeight(){
@@ -144,6 +151,24 @@ function keepWidth(){
         //fix left margin
         var width_outside_body = w - $('body').width();
         $fn_container.css({'margin-left': -width_outside_body + 'px'});
+    });
+}
+function minimizeDealzone(){
+    sessionStorage["dealzone-minimized"] = true;
+
+    $('body').animate({'width': '90%'}, 1000);
+    $fn_container.animate({'width': '8%', 'max-width': '8%', 'min-width': '120px'}, 1000, function(){
+        keepHeight();
+        keepWidth();
+    });
+}
+function maximizeDealzone(){
+    sessionStorage["dealzone-minimized"] = false;
+
+    $('body').animate({'width': '80%'}, 1000);
+    $fn_container.animate({'width': '18%', 'max-width': '18%', 'min-width': '180px'}, 1000, function(){
+        keepHeight();
+        keepWidth();
     });
 }
 
