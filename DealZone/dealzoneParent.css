@@ -59,3 +59,7 @@
     background: linear-gradient(to bottom,  rgba(209,209,210,1) 0%,rgba(216,216,216,1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d1d1d2', endColorstr='#d8d8d8',GradientType=0 );
 }
+
+.fn-dealzone-container.minified{
+    background: transparent !important;
+}

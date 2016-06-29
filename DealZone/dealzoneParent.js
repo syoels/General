@@ -142,38 +142,51 @@ function keepWidth(){
     var w = $(window).width();
     var body_max_width = (w - min_width) + "px";
     $('body').css({'max-width': body_max_width});
-    $(window).resize(fixDzWidth);
-}
-function fixDzWidth(){
-    var $fn_container = getDealzoneElement();
-    var min_width = $fn_container.css('min-width');
-    min_width = parseInt(min_width.substring(0,min_width.indexOf('px')));
-    var w = $(window).width();
-    var body_max_width = (w - min_width) + "px";
-    $('body').css({'max-width': body_max_width});
+    $(window).resize(function(){
+        var $fn_container = getDealzoneElement();
+        var min_width = $fn_container.css('min-width');
+        min_width = parseInt(min_width.substring(0,min_width.indexOf('px')));
+        var w = $(window).width();
+        var body_max_width = (w - min_width) + "px";
+        $('body').css({'max-width': body_max_width});
 
-    //fix left margin
-    var width_outside_body = w - $('body').width();
-    $fn_container.css({'margin-left': -width_outside_body + 'px'});
+        //fix left margin
+        var width_outside_body = w - $('body').width();
+        $fn_container.css({'margin-left': -width_outside_body + 'px'});
+    });
 }
+
 
 function minimizeDealzone(){
     sessionStorage["dealzone-minimized"] = true;
 
     var $fn_container = getDealzoneElement();
-    $('body').animate({'width': '90%'}, 1000, fixDzWidth);
-    $fn_container.animate({'width': '8%', 'max-width': '8%', 'min-width': '120px'}, 1000);
+    $fn_container.addClass("minified");
 
-    //fix left margin
-    var width_outside_body = w - $('body').width();
-    $fn_container.animate({'margin-left': -width_outside_body});
+    $('body').animate({'width': '90%'}, 1000);
+    $fn_container.animate({
+        'width': '8%',
+        'max-width': '8%',
+        'min-width': '120px',
+        'margin-left': -($(window).width() * 0.1) + 'px'
+    }, 1000);
+
 }
+
 function maximizeDealzone(){
     sessionStorage["dealzone-minimized"] = false;
 
     var $fn_container = getDealzoneElement();
-    $('body').animate({'width': '80%'}, 1000, fixDzWidth);
-    $fn_container.animate({'width': '18%', 'max-width': '18%', 'min-width': '180px'}, 1000);
+    $fn_container.removeClass("minified");
+
+    $('body').animate({'width': '80%'}, 1000);
+    $fn_container.animate({
+        'width': '18%',
+        'max-width': '18%',
+        'min-width': '180px',
+        'margin-left': -($(window).width() * 0.2) + 'px'
+    }, 1000);
+
 }
 
 

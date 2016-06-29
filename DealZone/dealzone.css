@@ -23,6 +23,7 @@ body{
     height: inherit;
     padding: 0 10px;
     cursor: pointer;
+    z-index: 9998;
 }
 #dz-minimize img {
     height: 30%;
