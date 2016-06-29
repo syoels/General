@@ -168,7 +168,7 @@ function minimizeDealzone(){
         'width': '8%',
         'max-width': '8%',
         'min-width': '120px',
-        'margin-left': -($(window).width() * 0.1) + 'px'
+        'margin-left': '-14%'
     }, 1000);
 
 }
@@ -184,7 +184,7 @@ function maximizeDealzone(){
         'width': '18%',
         'max-width': '18%',
         'min-width': '180px',
-        'margin-left': -($(window).width() * 0.2) + 'px'
+        'margin-left': '-20%'
     }, 1000);
 
 }
