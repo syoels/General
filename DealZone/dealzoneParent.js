@@ -1,5 +1,5 @@
 //TODO: move to normal hosting
-var TAG = "6fb66a1ca42dc11d27d367cd3cff949d8ec0c761"; //"Branch_v1.9";
+var TAG = "4cdabd902b3732131c96a387086064a102f5d0ab"; //"Branch_v1.9";
 var TARGET = "http://cdn.rawgit.com";
 var DZ_ORIGIN = "http://cdn.rawgit.com";
 var DEALZONE_HTML = "http://cdn.rawgit.com/syoels/General/" + TAG + "/DealZone/dealzone.html";
