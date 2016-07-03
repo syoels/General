@@ -60,15 +60,12 @@ body{
 .dz-item.in{
     animation-name: dz-item-entrance;
     animation-duration: 1.5s;
-    min-height: 70px;
-    max-height: 200px;
-    padding: 5px;
-    max-width: 400px;
+    animation-fill-mode: forwards;
 }
 .dz-item.in > *{
     animation-name: dz-item-content-entrance;
     animation-duration: 1.5s;
-    opacity: 1;
+    animation-fill-mode: forwards;
 }
 
 .dz-item.in:nth-child(1){  animation-delay: 0s;  }

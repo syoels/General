@@ -92,14 +92,14 @@ function maximizeDealzone(){
 function insertItem(idx, innerHTML){
 
     var id = $('.dz-item').length;
-    var $item = $('<div class="dz-item dz-shade dz-bg-light in" id="dz-item-' + id + '" >' + innerHTML + '</div>');
+    var $item = $('<div class="dz-item dz-shade dz-bg-light" id="dz-item-' + id + '" >' + innerHTML + '</div>');
 
     var insertAfter = $('.dz-item').get(idx);
     if(insertAfter == undefined){
-        $item.appendTo('.dz-body');
+        $item.appendTo('.dz-body').addClass("in");
         return;
     } else {
-        $item.insertAfter(insertAfter);
+        $item.insertAfter(insertAfter).addClass("in");
     }
   }
 
