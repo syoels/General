@@ -39,6 +39,8 @@ function receiveMessage(event) {
         switch(event.data.type){
             case "init":
                 if(event.data.data == "maximized"){
+                    writeMsg("Init Dealzone maximized");
+                    console.log("Init Dealzone maximized");
                     $('.dz-maximized').fadeIn();
                     $items = $('.dz-item');
                     for(var i = 0; i < $items.length; i++){
@@ -54,6 +56,8 @@ function receiveMessage(event) {
                     }
                 }
                 if(event.data.data == "minimized"){
+                    writeMsg("Init Dealzone minified");
+                    console.log("Init Dealzone minified");
                     $('.dz-minified').fadeIn();
                 }
                 break;
