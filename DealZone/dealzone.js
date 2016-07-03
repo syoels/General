@@ -92,16 +92,7 @@ function maximizeDealzone(){
 function insertItem(idx, innerHTML){
 
     var id = $('.dz-item').length;
-    var $item = $('<div class="dz-item dz-shade dz-bg-light" id="dz-item-' + id + '" >' + innerHTML + '</div>');
-    $item.css({
-        'min-height': '0px',
-        'max-height': '0px',
-        'overflow': 'hidden',
-        'padding': '0px',
-        'max-width': '0px',
-    });
-    $item.children().hide();
-
+    var $item = $('<div class="dz-item dz-shade dz-bg-light in" id="dz-item-' + id + '" >' + innerHTML + '</div>');
 
     var insertAfter = $('.dz-item').get(idx);
     if(insertAfter == undefined){
@@ -110,19 +101,7 @@ function insertItem(idx, innerHTML){
     } else {
         $item.insertAfter(insertAfter);
     }
-
-    $item.animate({ //height
-        'min-height': '70px',
-        'max-height': '200px'
-    }, 400, function(){
-        $item.animate({ //width
-            'padding': '5px',
-            'max-width': '400px',
-        }, 600, function(){
-            $item.children().fadeIn();
-        });
-    });
-}
+  }
 
 function dzInsert(item_name){
     switch(item_name){
