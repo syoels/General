@@ -117,6 +117,9 @@ function showDealzone(){
 
         //enter screen
         $fn_container.fadeIn();
+        var state = sessionStorage["dealzone-minimized"] ? "minimized" : "maximized";
+        sendMsg({type: "init": data: state});
+
         $('body').animate({'width': '80%'}, 1000);
         $fn_container.animate({'width': '18%', 'max-width': '18%', 'min-width': '180px'}, 1000, function(){
             keepHeight();

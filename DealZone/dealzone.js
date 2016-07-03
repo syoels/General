@@ -27,9 +27,43 @@ window.addEventListener("message", handleDemoData, false);
  ============================*/
 window.addEventListener("message", receiveMessage, false);
 function receiveMessage(event) {
+
+    //TODO: delete following lines after demo
     var data = (typeof event.data === 'string') ? '"' + event.data + '"' : 'data';
     var origin = event.origin || event.originalEvent.origin; // For Chrome, the origin property is in the event.originalEvent object.
     writeMsg('Got ' + data + ' from "' + origin +'"');
+    ///////////////////////////////////////////////////////
+
+
+    if(event.data.type){
+        switch(event.data.type){
+            case "init":
+                if(event.data.data == "maximized"){
+                    $('.dz-maximized').fadeIn();
+                    $items = $('.dz-item');
+                    for(var i = 0; i < $items.length; i++){
+                        function enter(i){
+                            return function(){
+                                setTimeout(function(){
+                                    console.log("adding 'in' to current item.");
+                                    $($items[i]).addClass("in");
+                                }, 1200 + i * 300);
+                            }
+                        }
+                        enter(i)();
+                    }
+                }
+                if(event.data.data == "minimized"){
+                    $('.dz-minified').fadeIn();
+                }
+                break;
+            default:
+                break;
+        }
+    }
+
+
+
 }
 function messageParent(msg){
     window.parent.postMessage(msg, '*');
@@ -52,19 +86,6 @@ function setupButtons() {
     });
 }
 $(document).ready(function() {
-    $items = $('.dz-item');
-    for(var i = 0; i < $items.length; i++){
-        function enter(i){
-            return function(){
-                setTimeout(function(){
-                    console.log("adding 'in' to current item.");
-                    $($items[i]).addClass("in");
-                }, 1200 + i * 300);
-            }
-        }
-        enter(i)();
-
-    }
     setupButtons();
 });
 
