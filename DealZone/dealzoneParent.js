@@ -163,13 +163,13 @@ function minimizeDealzone(){
     var $fn_container = getDealzoneElement();
     $fn_container.addClass("minified");
 
-    $('body').animate({'width': '90%'}, 1000);
+/*    $('body').animate({'width': '90%'}, 1000);
     $fn_container.animate({
         'width': '8%',
         'max-width': '8%',
         'min-width': '120px',
         'margin-left': '-14%'
-    }, 1000);
+    }, 1000);*/
 
 }
 
@@ -179,13 +179,13 @@ function maximizeDealzone(){
     var $fn_container = getDealzoneElement();
     $fn_container.removeClass("minified");
 
-    $('body').animate({'width': '80%'}, 1000);
+/*    $('body').animate({'width': '80%'}, 1000);
     $fn_container.animate({
         'width': '18%',
         'max-width': '18%',
         'min-width': '180px',
         'margin-left': '-20%'
-    }, 1000);
+    }, 1000);*/
 
 }
 
