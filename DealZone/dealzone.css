@@ -61,11 +61,19 @@ body{
     animation-name: dz-item-entrance;
     animation-duration: 1.5s;
     animation-fill-mode: forwards;
+    -webkit-animation-name: dz-item-entrance;
+    -webkit-animation-duration: 1.5s;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode:forwards;
 }
 .dz-item.in > *{
     animation-name: dz-item-content-entrance;
     animation-duration: 1.5s;
     animation-fill-mode: forwards;
+    -webkit-animation-name: dz-item-content-entrance;
+    -webkit-animation-duration: 1.5s;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode:forwards;
 }
 
 .dz-item.in:nth-child(1){  animation-delay: 0s;  }
