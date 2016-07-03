@@ -116,9 +116,14 @@ function showDealzone(){
         sendDemoData();
 
         //enter screen
-        $fn_container.fadeIn();
-        var state = sessionStorage["dealzone-minimized"] ? "minimized" : "maximized";
-        sendMsg({type: "init", data: state});
+        if(sessionStorage["dealzone-minimized"]){
+            $fn_container.addClass("minified").fadeIn();
+            sendMsg({type: "init", data: "minimized"});
+        } else {
+            $fn_container.removeClass("minified").fadeIn();
+            sendMsg({type: "init", data: "maximized"});
+        }
+        
 
         $('body').animate({'width': '80%'}, 1000);
         $fn_container.animate({'width': '18%', 'max-width': '18%', 'min-width': '180px'}, 1000, function(){
