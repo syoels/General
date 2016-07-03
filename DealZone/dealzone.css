@@ -66,6 +66,12 @@ body{
     max-width: 400px;
 }
 
+.dz-item.in > *{
+    animation-name: dz-item-content-entrance;
+    animation-duration: 1.5s;
+    opacity: 1;
+}
+
 .dz-bg-light{
     background: #F9F9F3;
 }
@@ -256,6 +262,7 @@ body{
     background: #29baf3;
     z-index: 9999;
     max-width: 75%;
+    min-width: 190px;
     margin: 0;
     width: 100%;
     padding: 0;
@@ -332,3 +339,9 @@ body{
     }
 }
 
+@keyframes dz-item-content-entrance {
+    0%   {opacity: 0; }
+    70%  {opacity: 0; }
+    71%  {opacity: 0; }
+    100% {opacity: 1; }
+}

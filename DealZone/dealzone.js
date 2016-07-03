@@ -72,14 +72,21 @@ $(document).ready(function() {
  Appearance
  ============================*/
 function minimizeDealzone(){
-    messageParent({type: 'minimize'});
-    $('.dz-minified').fadeIn();
-    $('.dz-maximized').fadeOut();
+    var fadeOutSelector = ".dz-item > *";
+    $(fadeOutSelector).addClass("fade-out").fadeOut(400, function(){
+        messageParent({type: 'minimize'});
+        $('.dz-minified').fadeIn();
+        $('.dz-maximized').fadeOut();
+    });
+
 }
 function maximizeDealzone(){
     messageParent({type: 'maximize'});
     $('.dz-minified').fadeOut();
-    $('.dz-maximized').fadeIn();
+    $('.dz-maximized').fadeIn(400, function(){
+        var fadeInSelector = ".fade-out";
+        $(fadeInSelector).removeClass("fade-out").fadeIn();
+    });
 }
 
 function insertItem(idx, innerHTML){
