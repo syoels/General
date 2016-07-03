@@ -42,18 +42,7 @@ function receiveMessage(event) {
                     writeMsg("Init Dealzone maximized");
                     console.log("Init Dealzone maximized");
                     $('.dz-maximized').fadeIn();
-                    $items = $('.dz-item');
-                    for(var i = 0; i < $items.length; i++){
-                        function enter(i){
-                            return function(){
-                                setTimeout(function(){
-                                    console.log("adding 'in' to current item.");
-                                    $($items[i]).addClass("in");
-                                }, 1200 + i * 300);
-                            }
-                        }
-                        enter(i)();
-                    }
+                    showItems();
                 }
                 if(event.data.data == "minimized"){
                     writeMsg("Init Dealzone minified");
@@ -108,11 +97,29 @@ function minimizeDealzone(){
 function maximizeDealzone(){
     messageParent({type: 'maximize'});
     $('.dz-minified').fadeOut();
+    showItems();
     $('.dz-maximized').fadeIn(400, function(){
         var fadeInSelector = ".fade-out";
         $(fadeInSelector).removeClass("fade-out").fadeIn();
+
     });
 }
+
+function showItems(){
+    $items = $('.dz-item:not(.in)');
+    for(var i = 0; i < $items.length; i++){
+        function enter(i){
+            return function(){
+                setTimeout(function(){
+                    console.log("adding 'in' to current item.");
+                    $($items[i]).addClass("in");
+                }, 1200 + i * 300);
+            }
+        }
+        enter(i)();
+    }
+};
+
 
 function insertItem(idx, innerHTML){
 
